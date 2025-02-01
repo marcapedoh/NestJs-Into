@@ -1,12 +1,14 @@
 import { BadRequestException, forwardRef, HttpException, HttpStatus, Inject, Injectable, RequestTimeoutException } from "@nestjs/common";
 import { GetUsersParamDto } from "../dtos/get-users-param.dto";
 import { AuthService } from "src/auth/service/auth.service";
-import { Repository } from "typeorm";
+import { DataSource, Repository } from "typeorm";
 import { User } from "../user.entity";
 import { InjectRepository } from "@nestjs/typeorm";
 import { CreateUserDto } from "../dtos/create-user.dto";
 import { ConfigService, ConfigType } from "@nestjs/config";
 import profileConfig from "../config/profile.config";
+import { UserCreateManyProvider } from "./user-create-many.provider";
+import { CreateManyUsersDTO } from "../dtos/create-many-user.dto";
 
 /**
  * Class to connect to Users table and perform business operations
@@ -18,7 +20,8 @@ export class UserService {
         @Inject(forwardRef(() => AuthService)) private readonly authService: AuthService,
         @InjectRepository(User) private userRepository: Repository<User>,
         private readonly configService: ConfigService,
-        @Inject(profileConfig.KEY) private readonly profilConfiguration: ConfigType<typeof profileConfig>
+        @Inject(profileConfig.KEY) private readonly profilConfiguration: ConfigType<typeof profileConfig>,
+        private readonly usersCreateManyProvider: UserCreateManyProvider,
     ) { }
 
     /**
@@ -106,4 +109,9 @@ export class UserService {
         }
         return newUser
     }
+
+    public async createMany(createManyUsersDto: CreateManyUsersDTO) {
+        return await this.usersCreateManyProvider.createMany(createManyUsersDto)
+    }
+
 }

@@ -150,6 +150,7 @@
                                     <span class="modifier"></span>
                                     <span class="modifier"></span>
                                     <span class="modifier"></span>
+                                    <span class="modifier"></span>
                                 <a href="#email" >email</a>
                             </li>
                             <li>
@@ -202,6 +203,7 @@
                             <span class="modifier"></span>
                             <span class="modifier"></span>
                             <span class="modifier"></span>
+                            <span class="modifier"></span>
                         <span ><b>email</b></span>
                         <a href="#email"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -218,13 +220,13 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @IsString()<br />@IsNotEmpty()<br />@IsEmail()<br />
+                            @IsString()<br />@IsNotEmpty()<br />@IsEmail()<br />@MaxLength(96)<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/users/dtos/create-user.dto.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/users/dtos/create-user.dto.ts:20</a></div>
                         </td>
                     </tr>
 
@@ -303,7 +305,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/users/dtos/create-user.dto.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/users/dtos/create-user.dto.ts:14</a></div>
                         </td>
                     </tr>
 
@@ -342,7 +344,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/users/dtos/create-user.dto.ts:24</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/users/dtos/create-user.dto.ts:28</a></div>
                         </td>
                     </tr>
 
@@ -369,15 +371,19 @@ export class CreateUserDto {
     @MinLength(3)
     @MaxLength(96)
     firstName: string;
+
     @IsString()
     @IsOptional()
     @MinLength(3)
     @MaxLength(96)
     lastName?: string;
+
     @IsString()
     @IsNotEmpty()
     @IsEmail()
+    @MaxLength(96)
     email: string;
+
     @IsString()
     @IsNotEmpty()
     @MinLength(8)

@@ -347,7 +347,7 @@ export class AuthService {
 
     constructor(@Inject(forwardRef(() &#x3D;&gt; UserService)) private readonly userService: UserService) { }
     login(email: string, password: string) {
-        const user &#x3D; this.userService.findOneById(&#x27;1234&#x27;);
+        const user &#x3D; this.userService.findOneById(+&#x27;1234&#x27;);
         return &quot;SAMPLE_TOKEN&quot;
     }
 

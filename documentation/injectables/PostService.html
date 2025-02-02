@@ -180,12 +180,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(userService: <a href="../injectables/UserService.html" target="_self">UserService</a>, postRepository: <a href="../entitys/Post.html" target="_self">Repository&lt;Post&gt;</a>, metaOptionRepository: <a href="../entitys/MetaOption.html" target="_self">Repository&lt;MetaOption&gt;</a>, tagsService: <a href="../injectables/TagsService.html" target="_self">TagsService</a>)</code>
+<code>constructor(userService: <a href="../injectables/UserService.html" target="_self">UserService</a>, postRepository: <a href="../entitys/Post.html" target="_self">Repository&lt;Post&gt;</a>, metaOptionRepository: <a href="../entitys/MetaOption.html" target="_self">Repository&lt;MetaOption&gt;</a>, tagsService: <a href="../injectables/TagsService.html" target="_self">TagsService</a>, paginationProvider: <a href="../injectables/PaginationProvider.html" target="_self">PaginationProvider</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/post/services/post.service.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/post/services/post.service.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -250,6 +250,18 @@
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>paginationProvider</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PaginationProvider.html" target="_self" >PaginationProvider</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -287,8 +299,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="31"
-                                    class="link-to-prism">src/post/services/post.service.ts:31</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="44"
+                                    class="link-to-prism">src/post/services/post.service.ts:44</a></div>
                         </td>
                     </tr>
 
@@ -357,8 +369,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="52"
-                                    class="link-to-prism">src/post/services/post.service.ts:52</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="65"
+                                    class="link-to-prism">src/post/services/post.service.ts:65</a></div>
                         </td>
                     </tr>
 
@@ -420,15 +432,15 @@
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>findAll(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    <code>findAll(postQuery: <a href="../classes/GetPostDto.html" target="_self">GetPostDto</a>, userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="19"
-                                    class="link-to-prism">src/post/services/post.service.ts:19</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="25"
+                                    class="link-to-prism">src/post/services/post.service.ts:25</a></div>
                         </td>
                     </tr>
 
@@ -449,6 +461,18 @@
                                     </thead>
                                     <tbody>
                                         <tr>
+                                                <td>postQuery</td>
+                                            <td>
+                                                            <code><a href="../classes/GetPostDto.html" target="_self" >GetPostDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
                                                 <td>userId</td>
                                             <td>
                                                             <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
@@ -464,7 +488,7 @@
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>    <code>unknown</code>
+                            <b>Returns : </b>        <code><a href="../interfaces/Paginated.html" target="_self" >Promise&lt;Paginated&lt;Post&gt;&gt;</a></code>
 
                         </div>
                             <div class="io-description">
@@ -497,8 +521,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="72"
-                                    class="link-to-prism">src/post/services/post.service.ts:72</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="85"
+                                    class="link-to-prism">src/post/services/post.service.ts:85</a></div>
                         </td>
                     </tr>
 
@@ -534,7 +558,7 @@
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                            <b>Returns : </b>    <code>unknown</code>
 
                         </div>
                             <div class="io-description">
@@ -550,7 +574,7 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@nestjs/common&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BadRequestException, Injectable, RequestTimeoutException } from &#x27;@nestjs/common&#x27;;
 import { UserService } from &#x27;src/users/providers/user.service&#x27;;
 import { CreatePostDto } from &#x27;../dtos/create-post.dtos&#x27;;
 import { Repository } from &#x27;typeorm&#x27;;
@@ -559,6 +583,9 @@ import { InjectRepository } from &#x27;@nestjs/typeorm&#x27;;
 import { MetaOption } from &#x27;src/meta-options/meta-option.entity&#x27;;
 import { TagsService } from &#x27;src/tags/providers/tags.service&#x27;;
 import { PatchPostDto } from &#x27;../dtos/patch-post-dto&#x27;;
+import { GetPostDto } from &#x27;../dtos/get-posts.dto&#x27;;
+import { PaginationProvider } from &#x27;src/common/pagination/providers/pagination.provider&#x27;;
+import { Paginated } from &#x27;src/common/pagination/interfaces/paginated.interface&#x27;;
 @Injectable()
 export class PostService {
 
@@ -567,16 +594,26 @@ export class PostService {
 
         @InjectRepository(MetaOption) private readonly metaOptionRepository: Repository&lt;MetaOption&gt;,
 
-        private readonly tagsService: TagsService) { }
-    public async findAll(userId: string) {
-        const user &#x3D; await this.userService.findOneById(+userId);
+        private readonly tagsService: TagsService,
+
+        private readonly paginationProvider: PaginationProvider
+    ) { }
+    public async findAll(postQuery: GetPostDto, userId: string): Promise&lt;Paginated&lt;Post&gt;&gt; {
+        /*const user &#x3D; await this.userService.findOneById(+userId);
         let posts &#x3D; await this.postRepository.find({
             relations: {
                 metaOptions: true,
                 author: true,
                 tags: true
-            }
-        })
+            },
+            skip: (postQuery.page - 1) * postQuery.limit,
+            take: postQuery.limit,
+        })*/
+
+        let posts &#x3D; await this.paginationProvider.paginateQuery({
+            limit: postQuery.limit,
+            page: postQuery.page
+        }, this.postRepository,)
         return posts
     }
 
@@ -622,15 +659,44 @@ export class PostService {
 
 
     public async update(patchPostDto: PatchPostDto) {
-        let atgs &#x3D; await this.tagsService.findMultpleTags(patchPostDto.tags);
+        let tags &#x3D; undefined;
+        let post &#x3D; undefined;
+        try {
+            tags &#x3D; await this.tagsService.findMultpleTags(patchPostDto.tags);
+        } catch (err) {
+            throw new RequestTimeoutException(&#x27;unable to process your request please try later&#x27;,);
+        }
 
-        let post &#x3D; await this.postRepository.findOneBy({ id: patchPostDto.id })
-        
+        if (!tags || tags.length !&#x3D;&#x3D; patchPostDto.tags.length) {
+            throw new BadRequestException(&#x27;please check your tag Ids and ensure they are correct&#x27;)
+        }
+
+        try {
+            post &#x3D; await this.postRepository.findOneBy({ id: patchPostDto.id })
+        } catch (e) {
+            throw new RequestTimeoutException(&#x27;unable to process your request please try later&#x27;,);
+
+        }
+
+        if (!post) {
+            throw new BadRequestException(&#x27;The post id does not exist&#x27;)
+        }
+
         post.title &#x3D; patchPostDto.title ?? post.title;
         post.content &#x3D; patchPostDto.content ?? post.content
         post.status &#x3D; patchPostDto.status ?? post.status
         post.slug &#x3D; patchPostDto.slug ?? post.slug
-        post.
+        post.postType &#x3D; patchPostDto.postType ?? post.postType
+        post.featuredImageUrl &#x3D; patchPostDto.featuredImageUrl ?? post.featuredImageUrl
+        post.publishOn &#x3D; patchPostDto.publishOn ?? post.publishOn
+
+        post.tags &#x3D; tags
+        try {
+            await this.postRepository.save(post)
+        } catch (err) {
+            throw new RequestTimeoutException(&#x27;unable to process your request please try later&#x27;,);
+        }
+        return post;
     }
 }
 </code></pre>

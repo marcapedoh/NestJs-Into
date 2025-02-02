@@ -150,6 +150,11 @@
                             <li>
                                     <span class="modifier"></span>
                                     <span class="modifier">Public</span>
+                                <a href="#createManyUsers" >createManyUsers</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Public</span>
                                 <a href="#createUsers" >createUsers</a>
                             </li>
                             <li>
@@ -187,6 +192,83 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="createManyUsers"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Public</span>
+                        <span ><b>createManyUsers</b></span>
+                        <a href="#createManyUsers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createManyUsers(createManyUsersDTO: <a href="../classes/CreateManyUsersDTO.html" target="_self">CreateManyUsersDTO</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Post(&#x27;create-many&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="50"
+                                    class="link-to-prism">src/users/users.controller.ts:50</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>createManyUsersDTO</td>
+                                            <td>
+                                                            <code><a href="../classes/CreateManyUsersDTO.html" target="_self" >CreateManyUsersDTO</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="createUsers"></a>
                     <span class="name">
                             <span class="modifier"></span>
@@ -213,8 +295,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="43"
-                                    class="link-to-prism">src/users/users.controller.ts:43</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="44"
+                                    class="link-to-prism">src/users/users.controller.ts:44</a></div>
                         </td>
                     </tr>
 
@@ -294,8 +376,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="35"
-                                    class="link-to-prism">src/users/users.controller.ts:35</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="36"
+                                    class="link-to-prism">src/users/users.controller.ts:36</a></div>
                         </td>
                     </tr>
 
@@ -395,8 +477,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="49"
-                                    class="link-to-prism">src/users/users.controller.ts:49</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="56"
+                                    class="link-to-prism">src/users/users.controller.ts:56</a></div>
                         </td>
                     </tr>
 
@@ -452,6 +534,7 @@ import { GetUsersParamDto } from &#x27;./dtos/get-users-param.dto&#x27;;
 import { PatchUserDto } from &#x27;./dtos/patch-user.dto&#x27;;
 import { UserService } from &#x27;./providers/user.service&#x27;;
 import { ApiOperation, ApiQuery, ApiResponse, ApiTags } from &#x27;@nestjs/swagger&#x27;;
+import { CreateManyUsersDTO } from &#x27;./dtos/create-many-user.dto&#x27;;
 
 @Controller(&#x27;users&#x27;)
 @ApiTags(&#x27;Users&#x27;)
@@ -491,6 +574,12 @@ export class UsersController {
     public createUsers(@Body() createUserDTO: CreateUserDto,
     ) {
         return this.userService.createUser(createUserDTO);
+    }
+
+    @Post(&#x27;create-many&#x27;)
+    public createManyUsers(@Body() createManyUsersDTO: CreateManyUsersDTO
+    ) {
+        return this.userService.createMany(createManyUsersDTO);
     }
 
     @Patch()

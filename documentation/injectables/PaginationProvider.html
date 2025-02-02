@@ -98,7 +98,7 @@
 
 <ol class="breadcrumb">
   <li class="breadcrumb-item">Injectables</li>
-  <li class="breadcrumb-item" >TagsService</li>
+  <li class="breadcrumb-item" >PaginationProvider</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -122,7 +122,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/tags/providers/tags.service.ts</code>
+            <code>src/common/pagination/providers/pagination.provider.ts</code>
         </p>
 
 
@@ -145,22 +145,7 @@
                             <li>
                                     <span class="modifier">Public</span>
                                     <span class="modifier">Async</span>
-                                <a href="#createTags" >createTags</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
-                                    <span class="modifier">Async</span>
-                                <a href="#delete" >delete</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
-                                    <span class="modifier">Async</span>
-                                <a href="#findMultpleTags" >findMultpleTags</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
-                                    <span class="modifier">Async</span>
-                                <a href="#softRemove" >softRemove</a>
+                                <a href="#paginateQuery" >paginateQuery</a>
                             </li>
                         </ul>
                     </td>
@@ -180,12 +165,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(tagsRepository: <a href="../entitys/Tag.html" target="_self">Repository&lt;Tag&gt;</a>)</code>
+<code>constructor(request: Request)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/tags/providers/tags.service.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/common/pagination/providers/pagination.provider.ts:9</a></div>
                             </td>
                         </tr>
 
@@ -203,10 +188,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>tagsRepository</td>
+                                                        <td>request</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../entitys/Tag.html" target="_self" >Repository&lt;Tag&gt;</a></code>
+                                                                    <code>Request</code>
                                                         </td>
                                                   
                                                     <td>
@@ -232,30 +217,38 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="createTags"></a>
+                    <a name="paginateQuery"></a>
                     <span class="name">
                             <span class="modifier">Public</span>
                             <span class="modifier">Async</span>
-                        <span ><b>createTags</b></span>
-                        <a href="#createTags"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>paginateQuery</b></span>
+                        <a href="#paginateQuery"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>createTags(createTagDto: <a href="../classes/CreateTagDto.html" target="_self">CreateTagDto</a>)</code>
+                    <code>paginateQuery(paginationQuery: <a href="../classes/PaginationQueryDto.html" target="_self">PaginationQueryDto</a>, repository: Repository<T>)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="12"
-                                    class="link-to-prism">src/tags/providers/tags.service.ts:12</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="15"
+                                    class="link-to-prism">src/common/pagination/providers/pagination.provider.ts:15</a></div>
                         </td>
                     </tr>
 
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Type parameters :</b>
+                            <ul class="type-parameters">
+                                    <li>T</li>
+                            </ul>
+                        </td>
+                    </tr>
 
             <tr>
                 <td class="col-md-4">
@@ -273,9 +266,21 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>createTagDto</td>
+                                                <td>paginationQuery</td>
                                             <td>
-                                                            <code><a href="../classes/CreateTagDto.html" target="_self" >CreateTagDto</a></code>
+                                                            <code><a href="../classes/PaginationQueryDto.html" target="_self" >PaginationQueryDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>repository</td>
+                                            <td>
+                                                        <code>Repository&lt;T&gt;</code>
                                             </td>
 
                                             <td>
@@ -288,217 +293,7 @@
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>    <code>unknown</code>
-
-                        </div>
-                            <div class="io-description">
-                                
-                            </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="delete"></a>
-                    <span class="name">
-                            <span class="modifier">Public</span>
-                            <span class="modifier">Async</span>
-                        <span ><b>delete</b></span>
-                        <a href="#delete"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>delete(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
-                </td>
-            </tr>
-
-
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="28"
-                                    class="link-to-prism">src/tags/providers/tags.service.ts:28</a></div>
-                        </td>
-                    </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                            <div class="io-description">
-                                <b>Parameters :</b>
-                                
-                                <table class="params">
-                                    <thead>
-                                        <tr>
-                                            <td>Name</td>
-                                                <td>Type</td>
-                                            <td>Optional</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                                <td>id</td>
-                                            <td>
-                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                            </td>
-
-                                            <td>
-                                                    No
-                                            </td>
-
-
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        <div class="io-description">
-                            <b>Returns : </b>    <code>unknown</code>
-
-                        </div>
-                            <div class="io-description">
-                                
-                            </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="findMultpleTags"></a>
-                    <span class="name">
-                            <span class="modifier">Public</span>
-                            <span class="modifier">Async</span>
-                        <span ><b>findMultpleTags</b></span>
-                        <a href="#findMultpleTags"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>findMultpleTags(tags: number[])</code>
-                </td>
-            </tr>
-
-
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="18"
-                                    class="link-to-prism">src/tags/providers/tags.service.ts:18</a></div>
-                        </td>
-                    </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                            <div class="io-description">
-                                <b>Parameters :</b>
-                                
-                                <table class="params">
-                                    <thead>
-                                        <tr>
-                                            <td>Name</td>
-                                                <td>Type</td>
-                                            <td>Optional</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                                <td>tags</td>
-                                            <td>
-                                                        <code>number[]</code>
-                                            </td>
-
-                                            <td>
-                                                    No
-                                            </td>
-
-
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        <div class="io-description">
-                            <b>Returns : </b>    <code>unknown</code>
-
-                        </div>
-                            <div class="io-description">
-                                
-                            </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="softRemove"></a>
-                    <span class="name">
-                            <span class="modifier">Public</span>
-                            <span class="modifier">Async</span>
-                        <span ><b>softRemove</b></span>
-                        <a href="#softRemove"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>softRemove(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
-                </td>
-            </tr>
-
-
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="33"
-                                    class="link-to-prism">src/tags/providers/tags.service.ts:33</a></div>
-                        </td>
-                    </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                            <div class="io-description">
-                                <b>Parameters :</b>
-                                
-                                <table class="params">
-                                    <thead>
-                                        <tr>
-                                            <td>Name</td>
-                                                <td>Type</td>
-                                            <td>Optional</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                                <td>id</td>
-                                            <td>
-                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                            </td>
-
-                                            <td>
-                                                    No
-                                            </td>
-
-
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        <div class="io-description">
-                            <b>Returns : </b>    <code>unknown</code>
+                            <b>Returns : </b>        <code><a href="../interfaces/Paginated.html" target="_self" >Promise&lt;Paginated&lt;T&gt;&gt;</a></code>
 
                         </div>
                             <div class="io-description">
@@ -514,41 +309,53 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@nestjs/common&#x27;;
-import { CreateTagDto } from &#x27;../dtos/create-tag.dto&#x27;;
-import { In, Repository } from &#x27;typeorm&#x27;;
-import { Tag } from &#x27;../tag.entity&#x27;;
-import { InjectRepository } from &#x27;@nestjs/typeorm&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Injectable } from &#x27;@nestjs/common&#x27;;
+import { PaginationQueryDto } from &#x27;../dtos/pagination-query.dto&#x27;;
+import { ObjectLiteral, Repository } from &#x27;typeorm&#x27;;
+import { Request } from &#x27;express&#x27;;
+import { REQUEST } from &#x27;@nestjs/core&#x27;;
+import { Paginated } from &#x27;../interfaces/paginated.interface&#x27;;
 
 @Injectable()
-export class TagsService {
+export class PaginationProvider {
 
-    constructor(@InjectRepository(Tag) private readonly tagsRepository: Repository&lt;Tag&gt;) { }
-
-    public async createTags(createTagDto: CreateTagDto) {
-        let tag &#x3D; this.tagsRepository.create(createTagDto)
-
-        return await this.tagsRepository.save(tag)
-    }
-
-    public async findMultpleTags(tags: number[]) {
-        let result &#x3D; await this.tagsRepository.find({
-            where: {
-                id: In(tags)
-            }
+    constructor(
+        @Inject(REQUEST)
+        private readonly request: Request
+    ) { }
+    public async paginateQuery&lt;T extends ObjectLiteral&gt;(paginationQuery: PaginationQueryDto, repository: Repository&lt;T&gt;): Promise&lt;Paginated&lt;T&gt;&gt; {
+        let results &#x3D; await repository.find({
+            skip: (paginationQuery.page - 1) * paginationQuery.limit,
+            take: paginationQuery.limit
         })
 
-        return result;
-    }
+        const baseUrl &#x3D; this.request.protocol + &#x27;://&#x27; + this.request.headers.host + &#x27;/&#x27;;
 
-    public async delete(id: number) {
-        await this.tagsRepository.delete(id);
-        return { deleted: true, id }
-    }
+        const newUrl &#x3D; new URL(this.request.url, baseUrl)
+        console.log(newUrl)
 
-    public async softRemove(id: number) {
-        await this.tagsRepository.softDelete(id);
-        return { deleted: true, id }
+        const totalItems &#x3D; await repository.count();
+        const totalPages &#x3D; Math.ceil(totalItems / paginationQuery.limit);
+        const nextPage &#x3D; paginationQuery.page &#x3D;&#x3D;&#x3D; totalPages ? paginationQuery.page : paginationQuery.page + 1
+        const previousPage &#x3D; paginationQuery.page &#x3D;&#x3D;&#x3D; 1 ? paginationQuery.page : paginationQuery.page - 1;
+        const finalResponse: Paginated&lt;T&gt; &#x3D; {
+            data: results,
+            meta: {
+                itemsPerPage: paginationQuery.limit,
+                totalItems: totalItems,
+                currentPage: paginationQuery.page,
+                totalPages: totalPages,
+            },
+            links: {
+                first: &#x60;${newUrl.origin}${newUrl.pathname}?limit&#x3D;${paginationQuery.limit}&amp;pages&#x3D;1&#x60;,
+                last: &#x60;${newUrl.origin}${newUrl.pathname}?limit&#x3D;${paginationQuery.limit}&amp;pages&#x3D;${totalPages}&#x60;,
+                current: &#x60;${newUrl.origin}${newUrl.pathname}?limit&#x3D;${paginationQuery.limit}&amp;pages&#x3D;${paginationQuery.page}&#x60;,
+                next: &#x60;${newUrl.origin}${newUrl.pathname}?limit&#x3D;${paginationQuery.limit}&amp;pages&#x3D;${nextPage}&#x60;,
+                previous: &#x60;${newUrl.origin}${newUrl.pathname}?limit&#x3D;${paginationQuery.limit}&amp;pages&#x3D;${previousPage}&#x60;
+            }
+        }
+
+        return finalResponse;
     }
 }
 </code></pre>
@@ -594,7 +401,7 @@ export class TagsService {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'TagsService.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'PaginationProvider.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

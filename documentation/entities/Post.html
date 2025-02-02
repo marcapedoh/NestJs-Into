@@ -601,7 +601,7 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @ManyToMany(undefined, {eager: true})<br />@JoinTable()<br />
+                            @ManyToMany(undefined, tag &#x3D;&gt; tag.posts, {eager: true})<br />@JoinTable()<br />
                         </code>
                     </td>
                 </tr>
@@ -736,7 +736,7 @@ export class Post {
     author: User;
 
 
-    @ManyToMany(() &#x3D;&gt; Tag, {
+    @ManyToMany(() &#x3D;&gt; Tag, (tag) &#x3D;&gt; tag.posts, {
         eager: true
     })
     @JoinTable()

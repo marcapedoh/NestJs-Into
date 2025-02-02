@@ -220,8 +220,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="26"
-                                    class="link-to-prism">src/post/post.controller.ts:26</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="27"
+                                    class="link-to-prism">src/post/post.controller.ts:27</a></div>
                         </td>
                     </tr>
 
@@ -297,8 +297,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="42"
-                                    class="link-to-prism">src/post/post.controller.ts:42</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="43"
+                                    class="link-to-prism">src/post/post.controller.ts:43</a></div>
                         </td>
                     </tr>
 
@@ -360,7 +360,7 @@
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getPost(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    <code>getPost(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, postQuery: <a href="../classes/GetPostDto.html" target="_self">GetPostDto</a>)</code>
                 </td>
             </tr>
 
@@ -374,8 +374,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="14"
-                                    class="link-to-prism">src/post/post.controller.ts:14</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="15"
+                                    class="link-to-prism">src/post/post.controller.ts:15</a></div>
                         </td>
                     </tr>
 
@@ -399,6 +399,18 @@
                                                 <td>userId</td>
                                             <td>
                                                             <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>postQuery</td>
+                                            <td>
+                                                            <code><a href="../classes/GetPostDto.html" target="_self" >GetPostDto</a></code>
                                             </td>
 
                                             <td>
@@ -453,8 +465,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="37"
-                                    class="link-to-prism">src/post/post.controller.ts:37</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="38"
+                                    class="link-to-prism">src/post/post.controller.ts:38</a></div>
                         </td>
                     </tr>
 
@@ -490,7 +502,7 @@
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                         </div>
                             <div class="io-description">
@@ -509,6 +521,7 @@ import { PostService } from &#x27;./services/post.service&#x27;;
 import { ApiOperation, ApiResponse, ApiTags } from &#x27;@nestjs/swagger&#x27;;
 import { CreatePostDto } from &#x27;./dtos/create-post.dtos&#x27;;
 import { PatchPostDto } from &#x27;./dtos/patch-post-dto&#x27;;
+import { GetPostDto } from &#x27;./dtos/get-posts.dto&#x27;;
 
 @Controller(&#x27;post&#x27;)
 @ApiTags(&#x27;posts&#x27;)
@@ -517,8 +530,8 @@ export class PostController {
     constructor(private readonly postService: PostService) { }
 
     @Get(&#x27;/:userId?&#x27;)
-    public getPost(@Param(&#x27;userId&#x27;) userId: string) {
-        return this.postService.findAll(userId)
+    public getPost(@Param(&#x27;userId&#x27;) userId: string, @Query() postQuery: GetPostDto) {
+        return this.postService.findAll(postQuery, userId)
     }
 
     @ApiOperation({
@@ -541,7 +554,7 @@ export class PostController {
     })
     @Patch()
     public updatePost(@Body() patchPostDto: PatchPostDto) {
-        console.log(patchPostDto)
+        return this.postService.update(patchPostDto)
     }
 
     @Delete()

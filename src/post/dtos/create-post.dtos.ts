@@ -114,12 +114,12 @@ export class CreatePostDto {
     @Type(() => CreatePostMetaOptionsDto)
     metaOptions?: CreatePostMetaOptionsDto | null;
 
-    @IsInt()
+    /*@IsInt()
     @IsNotEmpty()
     @ApiProperty({
         type: 'integer',
         required: true,
         example: 1
     })
-    authorId: number;
+    authorId: number;*/
 }

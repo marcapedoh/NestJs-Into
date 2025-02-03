@@ -149,6 +149,7 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier"></span>
+                                    <span class="modifier"></span>
                                     <span class="modifier">Public</span>
                                 <a href="#createManyUsers" >createManyUsers</a>
                             </li>
@@ -195,6 +196,7 @@
                     <a name="createManyUsers"></a>
                     <span class="name">
                             <span class="modifier"></span>
+                            <span class="modifier"></span>
                             <span class="modifier">Public</span>
                         <span ><b>createManyUsers</b></span>
                         <a href="#createManyUsers"><span class="icon ion-ios-link"></span></a>
@@ -212,14 +214,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Post(&#x27;create-many&#x27;)<br /></code>
+                    <code>@Post(&#x27;create-many&#x27;)<br />@UseGuards(AccessTokenGuard)<br /></code>
                 </td>
             </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="50"
-                                    class="link-to-prism">src/users/users.controller.ts:50</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="53"
+                                    class="link-to-prism">src/users/users.controller.ts:53</a></div>
                         </td>
                     </tr>
 
@@ -295,8 +297,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="44"
-                                    class="link-to-prism">src/users/users.controller.ts:44</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="46"
+                                    class="link-to-prism">src/users/users.controller.ts:46</a></div>
                         </td>
                     </tr>
 
@@ -376,8 +378,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="36"
-                                    class="link-to-prism">src/users/users.controller.ts:36</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="38"
+                                    class="link-to-prism">src/users/users.controller.ts:38</a></div>
                         </td>
                     </tr>
 
@@ -477,8 +479,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="56"
-                                    class="link-to-prism">src/users/users.controller.ts:56</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="59"
+                                    class="link-to-prism">src/users/users.controller.ts:59</a></div>
                         </td>
                     </tr>
 
@@ -528,16 +530,18 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Body, Controller, DefaultValuePipe, Get, Header, Headers, Ip, Param, ParseIntPipe, Patch, Post, Query, ValidationPipe } from &#x27;@nestjs/common&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Body, Controller, DefaultValuePipe, Get, Header, Headers, Ip, Param, ParseIntPipe, Patch, Post, Query, UseGuards, ValidationPipe } from &#x27;@nestjs/common&#x27;;
 import { CreateUserDto } from &#x27;./dtos/create-user.dto&#x27;;
 import { GetUsersParamDto } from &#x27;./dtos/get-users-param.dto&#x27;;
 import { PatchUserDto } from &#x27;./dtos/patch-user.dto&#x27;;
 import { UserService } from &#x27;./providers/user.service&#x27;;
 import { ApiOperation, ApiQuery, ApiResponse, ApiTags } from &#x27;@nestjs/swagger&#x27;;
 import { CreateManyUsersDTO } from &#x27;./dtos/create-many-user.dto&#x27;;
+import { AccessTokenGuard } from &#x27;src/auth/guards/access-token.guard&#x27;;
 
 @Controller(&#x27;users&#x27;)
 @ApiTags(&#x27;Users&#x27;)
+//@UseGuards(AccessTokenGuard)
 export class UsersController {
 
     constructor(private readonly userService: UserService) { }
@@ -577,6 +581,7 @@ export class UsersController {
     }
 
     @Post(&#x27;create-many&#x27;)
+    @UseGuards(AccessTokenGuard)
     public createManyUsers(@Body() createManyUsersDTO: CreateManyUsersDTO
     ) {
         return this.userService.createMany(createManyUsersDTO);

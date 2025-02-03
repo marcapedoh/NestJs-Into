@@ -86,7 +86,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content injectable">
+               <div class="content guard">
                    <div class="content-data">
 
 
@@ -96,9 +96,11 @@
 
 
 
+
+
 <ol class="breadcrumb">
-  <li class="breadcrumb-item">Injectables</li>
-  <li class="breadcrumb-item" >AuthService</li>
+    <li class="breadcrumb-item">Guards</li>
+    <li class="breadcrumb-item" >AccessTokenGuard</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -117,19 +119,20 @@
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="info">
-        <p class="comment">
+        <div class="tab-pane fade active in" id="info">
+            <p class="comment">
             <h3>File</h3>
-        </p>
-        <p class="comment">
-            <code>src/auth/service/auth.service.ts</code>
-        </p>
+            </p>
+            <p class="comment">
+                <code>src/auth/guards/access-token.guard.ts</code>
+            </p>
 
 
 
 
 
-            <section data-compodoc="block-index">
+
+                <section data-compodoc="block-index">
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
@@ -143,13 +146,12 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#isAUth" >isAUth</a>
+                                    <span class="modifier">Async</span>
+                                <a href="#canActivate" >canActivate</a>
                             </li>
                             <li>
-                                    <span class="modifier">Public</span>
-                                    <span class="modifier">Async</span>
-                                <a href="#signIn" >signIn</a>
+                                    <span class="modifier">Private</span>
+                                <a href="#extractRequestFromHeader" >extractRequestFromHeader</a>
                             </li>
                         </ul>
                     </td>
@@ -163,18 +165,18 @@
     </table>
 </section>
 
-            <section data-compodoc="block-constructor">
+                <section data-compodoc="block-constructor">
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(userService: <a href="../injectables/UserService.html" target="_self">UserService</a>, signInProvider: <a href="../injectables/SignInProvider.html" target="_self">SignInProvider</a>)</code>
+<code>constructor(jwtService: JwtService, jwtConfiguration: ConfigType<>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/auth/service/auth.service.ts:7</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/auth/guards/access-token.guard.ts:10</a></div>
                             </td>
                         </tr>
 
@@ -192,10 +194,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>userService</td>
+                                                        <td>jwtService</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+                                                                    <code>JwtService</code>
                                                         </td>
                                                   
                                                     <td>
@@ -204,10 +206,10 @@
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>signInProvider</td>
+                                                        <td>jwtConfiguration</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/SignInProvider.html" target="_self" >SignInProvider</a></code>
+                                                                    <code>ConfigType&lt;&gt;</code>
                                                         </td>
                                                   
                                                     <td>
@@ -224,7 +226,7 @@
         </table>
 </section>
 
-            <section data-compodoc="block-methods">
+                <section data-compodoc="block-methods">
     
     <h3 id="methods">
         Methods
@@ -233,66 +235,26 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="isAUth"></a>
+                    <a name="canActivate"></a>
                     <span class="name">
-                            <span class="modifier">Public</span>
-                        <span ><b>isAUth</b></span>
-                        <a href="#isAUth"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>isAUth()</code>
-                </td>
-            </tr>
-
-
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="18"
-                                    class="link-to-prism">src/auth/service/auth.service.ts:18</a></div>
-                        </td>
-                    </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                        <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-
-                        </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="signIn"></a>
-                    <span class="name">
-                            <span class="modifier">Public</span>
                             <span class="modifier">Async</span>
-                        <span ><b>signIn</b></span>
-                        <a href="#signIn"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>canActivate</b></span>
+                        <a href="#canActivate"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>signIn(signInDto: <a href="../classes/SignInDto.html" target="_self">SignInDto</a>)</code>
+                    <code>canActivate(context: ExecutionContext)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="13"
-                                    class="link-to-prism">src/auth/service/auth.service.ts:13</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="15"
+                                    class="link-to-prism">src/auth/guards/access-token.guard.ts:15</a></div>
                         </td>
                     </tr>
 
@@ -313,9 +275,9 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>signInDto</td>
+                                                <td>context</td>
                                             <td>
-                                                            <code><a href="../classes/SignInDto.html" target="_self" >SignInDto</a></code>
+                                                        <code>ExecutionContext</code>
                                             </td>
 
                                             <td>
@@ -328,7 +290,76 @@
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>    <code>unknown</code>
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="extractRequestFromHeader"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>extractRequestFromHeader</b></span>
+                        <a href="#extractRequestFromHeader"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>extractRequestFromHeader(request: Request)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="33"
+                                    class="link-to-prism">src/auth/guards/access-token.guard.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>request</td>
+                                            <td>
+                                                        <code>Request</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>string | undefined</code>
 
                         </div>
                             <div class="io-description">
@@ -339,38 +370,50 @@
         </tbody>
     </table>
 </section>
+        </div>
 
-    </div>
 
-
-    <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { forwardRef, Inject, Injectable } from &#x27;@nestjs/common&#x27;;
-import { UserService } from &#x27;src/users/providers/user.service&#x27;;
-import { SignInDto } from &#x27;../dtos/signin.dto&#x27;;
-import { SignInProvider } from &#x27;../providers/sign-in.provider&#x27;;
+        <div class="tab-pane fade  tab-source-code" id="source">
+            <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CanActivate, ExecutionContext, Inject, Injectable, UnauthorizedException } from &#x27;@nestjs/common&#x27;;
+import { ConfigType } from &#x27;@nestjs/config&#x27;;
+import { JwtService } from &#x27;@nestjs/jwt&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import jwtConfig from &#x27;../config/jwt.config&#x27;;
+import { Request } from &#x27;express&#x27;;
+import { REQUEST_USER_KEY } from &#x27;../constants/auth.constants&#x27;;
 
 @Injectable()
-export class AuthService {
+export class AccessTokenGuard implements CanActivate {
 
-    constructor(@Inject(forwardRef(() &#x3D;&gt; UserService)) private readonly userService: UserService,
-        private readonly signInProvider: SignInProvider
-
-    ) { }
-    public async signIn(signInDto: SignInDto) {
-        return await this.signInProvider.signIn(signInDto)
+  constructor(private readonly jwtService: JwtService,
+    @Inject(jwtConfig.KEY) private readonly jwtConfiguration: ConfigType&lt;typeof jwtConfig&gt;
+  ) { }
+  async canActivate(
+    context: ExecutionContext,
+  ): Promise&lt;boolean&gt; {
+    const request &#x3D; context.switchToHttp().getRequest();
+    const token &#x3D; this.extractRequestFromHeader(request)
+    if (!token) {
+      throw new UnauthorizedException(&quot;&quot;)
     }
 
-
-    public isAUth() {
-        return true;
+    try {
+      const payload &#x3D; await this.jwtService.verifyAsync(token, this.jwtConfiguration)
+      request[REQUEST_USER_KEY] &#x3D; payload
+    } catch (error) {
+      throw new UnauthorizedException()
     }
+    return true;
+  }
+
+  private extractRequestFromHeader(request: Request): string | undefined {
+    const [_, token] &#x3D; request.headers.authorization?.split(&#x27; &#x27;) ?? [] //this line get the two part of the header bearer and token when split the string from the space between them
+    return token;
+  }
 }
 </code></pre>
-    </div>
-
+        </div>
 </div>
-
-
 
 
 
@@ -407,8 +450,8 @@ export class AuthService {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'AuthService.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'guard';
+            var COMPODOC_CURRENT_PAGE_URL = 'AccessTokenGuard.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

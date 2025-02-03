@@ -98,7 +98,7 @@
 
 <ol class="breadcrumb">
   <li class="breadcrumb-item">Injectables</li>
-  <li class="breadcrumb-item" >AuthService</li>
+  <li class="breadcrumb-item" >CreateUserProvider</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -122,7 +122,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/auth/service/auth.service.ts</code>
+            <code>src/users/providers/create-user.provider.ts</code>
         </p>
 
 
@@ -144,12 +144,8 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#isAUth" >isAUth</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
                                     <span class="modifier">Async</span>
-                                <a href="#signIn" >signIn</a>
+                                <a href="#createUser" >createUser</a>
                             </li>
                         </ul>
                     </td>
@@ -169,12 +165,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(userService: <a href="../injectables/UserService.html" target="_self">UserService</a>, signInProvider: <a href="../injectables/SignInProvider.html" target="_self">SignInProvider</a>)</code>
+<code>constructor(userRepository: <a href="../entitys/User.html" target="_self">Repository&lt;User&gt;</a>, hashingProvider: <a href="../injectables/HashingProvider.html" target="_self">HashingProvider</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/auth/service/auth.service.ts:7</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/users/providers/create-user.provider.ts:9</a></div>
                             </td>
                         </tr>
 
@@ -192,10 +188,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>userService</td>
+                                                        <td>userRepository</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+                                                                        <code><a href="../entitys/User.html" target="_self" >Repository&lt;User&gt;</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -204,10 +200,10 @@
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>signInProvider</td>
+                                                        <td>hashingProvider</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/SignInProvider.html" target="_self" >SignInProvider</a></code>
+                                                                        <code><a href="../injectables/HashingProvider.html" target="_self" >HashingProvider</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -233,66 +229,27 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="isAUth"></a>
-                    <span class="name">
-                            <span class="modifier">Public</span>
-                        <span ><b>isAUth</b></span>
-                        <a href="#isAUth"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>isAUth()</code>
-                </td>
-            </tr>
-
-
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="18"
-                                    class="link-to-prism">src/auth/service/auth.service.ts:18</a></div>
-                        </td>
-                    </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                        <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-
-                        </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="signIn"></a>
+                    <a name="createUser"></a>
                     <span class="name">
                             <span class="modifier">Public</span>
                             <span class="modifier">Async</span>
-                        <span ><b>signIn</b></span>
-                        <a href="#signIn"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>createUser</b></span>
+                        <a href="#createUser"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>signIn(signInDto: <a href="../classes/SignInDto.html" target="_self">SignInDto</a>)</code>
+                    <code>createUser(createUserDto: <a href="../classes/CreateUserDto.html" target="_self">CreateUserDto</a>)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="13"
-                                    class="link-to-prism">src/auth/service/auth.service.ts:13</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="16"
+                                    class="link-to-prism">src/users/providers/create-user.provider.ts:16</a></div>
                         </td>
                     </tr>
 
@@ -313,9 +270,9 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>signInDto</td>
+                                                <td>createUserDto</td>
                                             <td>
-                                                            <code><a href="../classes/SignInDto.html" target="_self" >SignInDto</a></code>
+                                                            <code><a href="../classes/CreateUserDto.html" target="_self" >CreateUserDto</a></code>
                                             </td>
 
                                             <td>
@@ -344,27 +301,58 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { forwardRef, Inject, Injectable } from &#x27;@nestjs/common&#x27;;
-import { UserService } from &#x27;src/users/providers/user.service&#x27;;
-import { SignInDto } from &#x27;../dtos/signin.dto&#x27;;
-import { SignInProvider } from &#x27;../providers/sign-in.provider&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BadRequestException, forwardRef, Inject, Injectable, RequestTimeoutException } from &#x27;@nestjs/common&#x27;;
+import { CreateUserDto } from &#x27;../dtos/create-user.dto&#x27;;
+import { Repository } from &#x27;typeorm&#x27;;
+import { User } from &#x27;../user.entity&#x27;;
+import { HashingProvider } from &#x27;src/auth/providers/hashing.provider&#x27;;
+import { InjectRepository } from &#x27;@nestjs/typeorm&#x27;;
 
 @Injectable()
-export class AuthService {
+export class CreateUserProvider {
 
-    constructor(@Inject(forwardRef(() &#x3D;&gt; UserService)) private readonly userService: UserService,
-        private readonly signInProvider: SignInProvider
-
+    constructor(
+        @InjectRepository(User) private readonly userRepository: Repository&lt;User&gt;,
+        @Inject(forwardRef(() &#x3D;&gt; HashingProvider)) private readonly hashingProvider: HashingProvider
     ) { }
-    public async signIn(signInDto: SignInDto) {
-        return await this.signInProvider.signIn(signInDto)
-    }
 
+    public async createUser(createUserDto: CreateUserDto) {
+        let existingUser &#x3D; undefined;
+        try {
+            existingUser &#x3D; await this.userRepository.findOne({
+                where: {
+                    email: createUserDto.email
+                }
+            })
 
-    public isAUth() {
-        return true;
+        } catch (error) {
+            throw new RequestTimeoutException(&#x27;Unable to process your request at the moment please try later&#x27;, {
+                description: &#x27;Error connectiong to the database&#x27;
+            })
+        }
+
+        if (existingUser) {
+            throw new BadRequestException(&#x27;The user already exists, please check your email.&#x27;)
+        }
+        let newUser &#x3D; this.userRepository.create({
+            ...createUserDto,
+            password: await this.hashingProvider.hashPassword(createUserDto.password)
+        });
+
+        try {
+            newUser &#x3D; await this.userRepository.save(newUser)
+        } catch (err) {
+            throw new RequestTimeoutException(&#x27;Unable to process your request at the moment please try later&#x27;, {
+                description: &#x27;Error connecting to the database&#x27;
+            })
+        }
+        return newUser
     }
 }
+function InejectRepository(): (target: typeof CreateUserProvider, propertyKey: undefined, parameterIndex: 0) &#x3D;&gt; void {
+    throw new Error(&#x27;Function not implemented.&#x27;);
+}
+
 </code></pre>
     </div>
 
@@ -408,7 +396,7 @@ export class AuthService {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'AuthService.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'CreateUserProvider.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

@@ -7,10 +7,16 @@ import { Post } from './post.entity';
 import { MetaOption } from 'src/meta-options/meta-option.entity';
 import { TagsModule } from 'src/tags/tags.module';
 import { PaginationModule } from 'src/common/pagination/pagination.module';
+import { CreatePostProvider } from './services/create-post.provider';
 
 @Module({
   controllers: [PostController],
-  providers: [PostService],
-  imports: [UsersModule, TagsModule, TypeOrmModule.forFeature([Post, MetaOption]), PaginationModule]
+  providers: [PostService, CreatePostProvider],
+  imports: [
+    UsersModule,
+    TagsModule,
+    TypeOrmModule.forFeature([Post, MetaOption]),
+    PaginationModule
+  ]
 })
 export class PostModule { }

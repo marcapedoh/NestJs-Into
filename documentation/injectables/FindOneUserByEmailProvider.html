@@ -98,7 +98,7 @@
 
 <ol class="breadcrumb">
   <li class="breadcrumb-item">Injectables</li>
-  <li class="breadcrumb-item" >AuthService</li>
+  <li class="breadcrumb-item" >FindOneUserByEmailProvider</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -122,7 +122,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/auth/service/auth.service.ts</code>
+            <code>src/users/providers/find-one-user-by-email.provider.ts</code>
         </p>
 
 
@@ -144,12 +144,8 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#isAUth" >isAUth</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
                                     <span class="modifier">Async</span>
-                                <a href="#signIn" >signIn</a>
+                                <a href="#findOneByEmail" >findOneByEmail</a>
                             </li>
                         </ul>
                     </td>
@@ -169,12 +165,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(userService: <a href="../injectables/UserService.html" target="_self">UserService</a>, signInProvider: <a href="../injectables/SignInProvider.html" target="_self">SignInProvider</a>)</code>
+<code>constructor(userReposiory: <a href="../entitys/User.html" target="_self">Repository&lt;User&gt;</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/auth/service/auth.service.ts:7</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/users/providers/find-one-user-by-email.provider.ts:7</a></div>
                             </td>
                         </tr>
 
@@ -192,22 +188,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>userService</td>
+                                                        <td>userReposiory</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>signInProvider</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/SignInProvider.html" target="_self" >SignInProvider</a></code>
+                                                                        <code><a href="../entitys/User.html" target="_self" >Repository&lt;User&gt;</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -233,58 +217,19 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="isAUth"></a>
-                    <span class="name">
-                            <span class="modifier">Public</span>
-                        <span ><b>isAUth</b></span>
-                        <a href="#isAUth"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>isAUth()</code>
-                </td>
-            </tr>
-
-
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="18"
-                                    class="link-to-prism">src/auth/service/auth.service.ts:18</a></div>
-                        </td>
-                    </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                        <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-
-                        </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="signIn"></a>
+                    <a name="findOneByEmail"></a>
                     <span class="name">
                             <span class="modifier">Public</span>
                             <span class="modifier">Async</span>
-                        <span ><b>signIn</b></span>
-                        <a href="#signIn"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>findOneByEmail</b></span>
+                        <a href="#findOneByEmail"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>signIn(signInDto: <a href="../classes/SignInDto.html" target="_self">SignInDto</a>)</code>
+                    <code>findOneByEmail(email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
@@ -292,7 +237,7 @@
                     <tr>
                         <td class="col-md-4">
                             <div class="io-line">Defined in <a href="" data-line="13"
-                                    class="link-to-prism">src/auth/service/auth.service.ts:13</a></div>
+                                    class="link-to-prism">src/users/providers/find-one-user-by-email.provider.ts:13</a></div>
                         </td>
                     </tr>
 
@@ -313,9 +258,9 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>signInDto</td>
+                                                <td>email</td>
                                             <td>
-                                                            <code><a href="../classes/SignInDto.html" target="_self" >SignInDto</a></code>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                             </td>
 
                                             <td>
@@ -344,25 +289,33 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { forwardRef, Inject, Injectable } from &#x27;@nestjs/common&#x27;;
-import { UserService } from &#x27;src/users/providers/user.service&#x27;;
-import { SignInDto } from &#x27;../dtos/signin.dto&#x27;;
-import { SignInProvider } from &#x27;../providers/sign-in.provider&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable, RequestTimeoutException, UnauthorizedException } from &#x27;@nestjs/common&#x27;;
+import { Repository } from &#x27;typeorm&#x27;;
+import { User } from &#x27;../user.entity&#x27;;
+import { InjectRepository } from &#x27;@nestjs/typeorm&#x27;;
 
 @Injectable()
-export class AuthService {
+export class FindOneUserByEmailProvider {
 
-    constructor(@Inject(forwardRef(() &#x3D;&gt; UserService)) private readonly userService: UserService,
-        private readonly signInProvider: SignInProvider
-
+    constructor(
+        @InjectRepository(User) private readonly userReposiory: Repository&lt;User&gt;
     ) { }
-    public async signIn(signInDto: SignInDto) {
-        return await this.signInProvider.signIn(signInDto)
-    }
 
+    public async findOneByEmail(email: string) {
+        let user: User | undefined &#x3D; undefined;
 
-    public isAUth() {
-        return true;
+        try {
+            user &#x3D; await this.userReposiory.findOneBy({ email: email });
+        } catch (error) {
+            throw new RequestTimeoutException(error, {
+                description: &#x27;could not fetch user&#x27;
+            })
+        }
+
+        if (!user) {
+            throw new UnauthorizedException(&quot;use does not exist&quot;)
+        }
+        return user;
     }
 }
 </code></pre>
@@ -408,7 +361,7 @@ export class AuthService {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'AuthService.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'FindOneUserByEmailProvider.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

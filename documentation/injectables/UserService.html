@@ -166,6 +166,11 @@
                             <li>
                                     <span class="modifier">Public</span>
                                     <span class="modifier">Async</span>
+                                <a href="#findOneByEmail" >findOneByEmail</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
                                 <a href="#findOneById" >findOneById</a>
                             </li>
                         </ul>
@@ -186,12 +191,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, userRepository: <a href="../entitys/User.html" target="_self">Repository&lt;User&gt;</a>, configService: ConfigService, profilConfiguration: ConfigType<>, usersCreateManyProvider: <a href="../injectables/UserCreateManyProvider.html" target="_self">UserCreateManyProvider</a>)</code>
+<code>constructor(authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, userRepository: <a href="../entitys/User.html" target="_self">Repository&lt;User&gt;</a>, configService: ConfigService, profilConfiguration: ConfigType<>, usersCreateManyProvider: <a href="../injectables/UserCreateManyProvider.html" target="_self">UserCreateManyProvider</a>, createUsersProvider: <a href="../injectables/CreateUserProvider.html" target="_self">CreateUserProvider</a>, findOneUserByEmailProvider: <a href="../injectables/FindOneUserByEmailProvider.html" target="_self">FindOneUserByEmailProvider</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/users/providers/user.service.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/users/providers/user.service.ts:19</a></div>
                             </td>
                         </tr>
 
@@ -268,6 +273,30 @@
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>createUsersProvider</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CreateUserProvider.html" target="_self" >CreateUserProvider</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>findOneUserByEmailProvider</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/FindOneUserByEmailProvider.html" target="_self" >FindOneUserByEmailProvider</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -305,8 +334,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="113"
-                                    class="link-to-prism">src/users/providers/user.service.ts:113</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="92"
+                                    class="link-to-prism">src/users/providers/user.service.ts:92</a></div>
                         </td>
                     </tr>
 
@@ -375,8 +404,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="83"
-                                    class="link-to-prism">src/users/providers/user.service.ts:83</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="88"
+                                    class="link-to-prism">src/users/providers/user.service.ts:88</a></div>
                         </td>
                     </tr>
 
@@ -444,8 +473,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="30"
-                                    class="link-to-prism">src/users/providers/user.service.ts:30</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="35"
+                                    class="link-to-prism">src/users/providers/user.service.ts:35</a></div>
                         </td>
                     </tr>
 
@@ -521,6 +550,76 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="findOneByEmail"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>findOneByEmail</b></span>
+                        <a href="#findOneByEmail"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>findOneByEmail(email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="96"
+                                    class="link-to-prism">src/users/providers/user.service.ts:96</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>email</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="findOneById"></a>
                     <span class="name">
                             <span class="modifier">Public</span>
@@ -540,8 +639,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="62"
-                                    class="link-to-prism">src/users/providers/user.service.ts:62</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="67"
+                                    class="link-to-prism">src/users/providers/user.service.ts:67</a></div>
                         </td>
                     </tr>
 
@@ -606,6 +705,8 @@ import { ConfigService, ConfigType } from &quot;@nestjs/config&quot;;
 import profileConfig from &quot;../config/profile.config&quot;;
 import { UserCreateManyProvider } from &quot;./user-create-many.provider&quot;;
 import { CreateManyUsersDTO } from &quot;../dtos/create-many-user.dto&quot;;
+import { CreateUserProvider } from &quot;./create-user.provider&quot;;
+import { FindOneUserByEmailProvider } from &quot;./find-one-user-by-email.provider&quot;;
 
 /**
  * Class to connect to Users table and perform business operations
@@ -619,6 +720,9 @@ export class UserService {
         private readonly configService: ConfigService,
         @Inject(profileConfig.KEY) private readonly profilConfiguration: ConfigType&lt;typeof profileConfig&gt;,
         private readonly usersCreateManyProvider: UserCreateManyProvider,
+
+        private readonly createUsersProvider: CreateUserProvider,
+        private readonly findOneUserByEmailProvider: FindOneUserByEmailProvider
     ) { }
 
     /**
@@ -678,37 +782,15 @@ export class UserService {
     }
 
     public async createUser(createUserDto: CreateUserDto) {
-        let existingUser &#x3D; undefined;
-        try {
-            existingUser &#x3D; await this.userRepository.findOne({
-                where: {
-                    email: createUserDto.email
-                }
-            })
-
-        } catch (error) {
-            throw new RequestTimeoutException(&#x27;Unable to process your request at the moment please try later&#x27;, {
-                description: &#x27;Error connectiong to the database&#x27;
-            })
-        }
-
-        if (existingUser) {
-            throw new BadRequestException(&#x27;The user already exists, please check your email.&#x27;)
-        }
-        let newUser &#x3D; this.userRepository.create(createUserDto);
-
-        try {
-            newUser &#x3D; await this.userRepository.save(newUser)
-        } catch (err) {
-            throw new RequestTimeoutException(&#x27;Unable to process your request at the moment please try later&#x27;, {
-                description: &#x27;Error connecting to the database&#x27;
-            })
-        }
-        return newUser
+        return this.createUsersProvider.createUser(createUserDto)
     }
 
     public async createMany(createManyUsersDto: CreateManyUsersDTO) {
         return await this.usersCreateManyProvider.createMany(createManyUsersDto)
+    }
+
+    public async findOneByEmail(email: string) {
+        return await this.findOneUserByEmailProvider.findOneByEmail(email)
     }
 
 }</code></pre>

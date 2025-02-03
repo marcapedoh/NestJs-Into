@@ -10,18 +10,24 @@ import { PatchPostDto } from '../dtos/patch-post-dto';
 import { GetPostDto } from '../dtos/get-posts.dto';
 import { PaginationProvider } from 'src/common/pagination/providers/pagination.provider';
 import { Paginated } from 'src/common/pagination/interfaces/paginated.interface';
+import { CreatePostProvider } from './create-post.provider';
+import { ActiveUserData } from 'src/auth/interfaces/active-user-data.interface';
 @Injectable()
 export class PostService {
 
-    constructor(private readonly userService: UserService,
+    constructor(
+        private readonly userService: UserService,
         @InjectRepository(Post) private readonly postRepository: Repository<Post>,
 
-        @InjectRepository(MetaOption) private readonly metaOptionRepository: Repository<MetaOption>,
+        //@InjectRepository(MetaOption) private readonly metaOptionRepository: Repository<MetaOption>,
 
         private readonly tagsService: TagsService,
 
-        private readonly paginationProvider: PaginationProvider
+        private readonly paginationProvider: PaginationProvider,
+
+        private readonly createPostProvider: CreatePostProvider
     ) { }
+
     public async findAll(postQuery: GetPostDto, userId: string): Promise<Paginated<Post>> {
         /*const user = await this.userService.findOneById(+userId);
         let posts = await this.postRepository.find({
@@ -41,25 +47,8 @@ export class PostService {
         return posts
     }
 
-    public async createPost(createPostDto: CreatePostDto) {
-        //let metaOptions = createPostDto.metaOptions ? this.metaOptionRepository.create(createPostDto.metaOptions) : null
-
-        let tags = await this.tagsService.findMultpleTags(createPostDto.tags)
-        let author = await this.userService.findOneById(createPostDto.authorId);
-        let post = this.postRepository.create({
-            ...createPostDto,
-            author: author,
-            tags: tags
-        })
-        /*
-        if (metaOptions) {
-                    await this.metaOptionRepository.save(metaOptions);
-                }
-                if (metaOptions) {
-                    post.metaOptions = metaOptions
-                }*/
-
-        return await this.postRepository.save(post)
+    public async createPost(createPostDto: CreatePostDto, user: ActiveUserData) {
+        return await this.createPostProvider.createPost(createPostDto, user)
     }
 
     public async delete(id: number) {

@@ -206,7 +206,7 @@
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>createPost(createPostDto: <a href="../classes/CreatePostDto.html" target="_self">CreatePostDto</a>)</code>
+                    <code>createPost(user: <a href="../interfaces/ActiveUserData.html" target="_self">ActiveUserData</a>, createPostDto: <a href="../classes/CreatePostDto.html" target="_self">CreatePostDto</a>)</code>
                 </td>
             </tr>
 
@@ -220,8 +220,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="27"
-                                    class="link-to-prism">src/post/post.controller.ts:27</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="29"
+                                    class="link-to-prism">src/post/post.controller.ts:29</a></div>
                         </td>
                     </tr>
 
@@ -241,6 +241,18 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../interfaces/ActiveUserData.html" target="_self" >ActiveUserData</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
                                         <tr>
                                                 <td>createPostDto</td>
                                             <td>
@@ -297,8 +309,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="43"
-                                    class="link-to-prism">src/post/post.controller.ts:43</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="46"
+                                    class="link-to-prism">src/post/post.controller.ts:46</a></div>
                         </td>
                     </tr>
 
@@ -374,8 +386,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="15"
-                                    class="link-to-prism">src/post/post.controller.ts:15</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="17"
+                                    class="link-to-prism">src/post/post.controller.ts:17</a></div>
                         </td>
                     </tr>
 
@@ -465,8 +477,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="38"
-                                    class="link-to-prism">src/post/post.controller.ts:38</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="41"
+                                    class="link-to-prism">src/post/post.controller.ts:41</a></div>
                         </td>
                     </tr>
 
@@ -516,12 +528,14 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Body, Controller, Delete, Get, Param, ParseIntPipe, Patch, Post, Query } from &#x27;@nestjs/common&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Body, Controller, Delete, Get, Param, ParseIntPipe, Patch, Post, Query, Req } from &#x27;@nestjs/common&#x27;;
 import { PostService } from &#x27;./services/post.service&#x27;;
 import { ApiOperation, ApiResponse, ApiTags } from &#x27;@nestjs/swagger&#x27;;
 import { CreatePostDto } from &#x27;./dtos/create-post.dtos&#x27;;
 import { PatchPostDto } from &#x27;./dtos/patch-post-dto&#x27;;
 import { GetPostDto } from &#x27;./dtos/get-posts.dto&#x27;;
+import { ActiveUser } from &#x27;src/auth/decorators/active-user.decorator&#x27;;
+import { ActiveUserData } from &#x27;src/auth/interfaces/active-user-data.interface&#x27;;
 
 @Controller(&#x27;post&#x27;)
 @ApiTags(&#x27;posts&#x27;)
@@ -542,8 +556,9 @@ export class PostController {
         description: &quot;you get a 201 response if your post is created successfully&quot;
     })
     @Post()
-    public createPost(@Body() createPostDto: CreatePostDto) {
-        return this.postService.createPost(createPostDto)
+    public createPost(@ActiveUser() user: ActiveUserData, @Body() createPostDto: CreatePostDto) {
+
+        return this.postService.createPost(createPostDto, user)
     }
     @ApiOperation({
         summary: &quot;Updates an existing blog post&quot;

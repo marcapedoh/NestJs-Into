@@ -86,16 +86,21 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content controller">
+               <div class="content guard">
                    <div class="content-data">
 
 
 
 
 
+
+
+
+
+
 <ol class="breadcrumb">
-  <li class="breadcrumb-item">Controllers</li>
-  <li class="breadcrumb-item" >AuthController</li>
+    <li class="breadcrumb-item">Guards</li>
+    <li class="breadcrumb-item" >AuthenticationGuard</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -114,19 +119,12 @@
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="info">
-        <p class="comment">
+        <div class="tab-pane fade active in" id="info">
+            <p class="comment">
             <h3>File</h3>
-        </p>
-        <p class="comment">
-            <code>src/auth/auth.controller.ts</code>
-        </p>
-
-            <p class="comment">
-                <h3>Prefix</h3>
             </p>
             <p class="comment">
-                <code>auth</code>
+                <code>src/auth/guards/authentication.guard.ts</code>
             </p>
 
 
@@ -134,10 +132,32 @@
 
 
 
-            <section data-compodoc="block-index">
+                <section data-compodoc="block-index">
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#authTypeGuardMap" >authTypeGuardMap</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Static</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#defaultAuthType" >defaultAuthType</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -148,20 +168,8 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier"></span>
-                                    <span class="modifier"></span>
-                                    <span class="modifier"></span>
-                                    <span class="modifier">Public</span>
                                     <span class="modifier">Async</span>
-                                <a href="#refreshToken" >refreshToken</a>
-                            </li>
-                            <li>
-                                    <span class="modifier"></span>
-                                    <span class="modifier"></span>
-                                    <span class="modifier"></span>
-                                    <span class="modifier">Public</span>
-                                    <span class="modifier">Async</span>
-                                <a href="#signIn" >signIn</a>
+                                <a href="#canActivate" >canActivate</a>
                             </li>
                         </ul>
                     </td>
@@ -175,7 +183,68 @@
     </table>
 </section>
 
-            <section data-compodoc="block-methods">
+                <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(reflector: Reflector, accessTokenGuard: <a href="../guards/AccessTokenGuard.html" target="_self">AccessTokenGuard</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/auth/guards/authentication.guard.ts:16</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>reflector</td>
+                                                  
+                                                        <td>
+                                                                    <code>Reflector</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>accessTokenGuard</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../guards/AccessTokenGuard.html" target="_self" >AccessTokenGuard</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+                <section data-compodoc="block-methods">
     
     <h3 id="methods">
         Methods
@@ -184,37 +253,26 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="refreshToken"></a>
+                    <a name="canActivate"></a>
                     <span class="name">
-                            <span class="modifier"></span>
-                            <span class="modifier"></span>
-                            <span class="modifier"></span>
-                            <span class="modifier">Public</span>
                             <span class="modifier">Async</span>
-                        <span ><b>refreshToken</b></span>
-                        <a href="#refreshToken"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>canActivate</b></span>
+                        <a href="#canActivate"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>refreshToken(refreshTokenDto: <a href="../classes/RefreshTokenDto.html" target="_self">RefreshTokenDto</a>)</code>
+                    <code>canActivate(context: ExecutionContext)</code>
                 </td>
             </tr>
 
-            <tr>
-                <td class="col-md-4">
-                    <b>Decorators : </b>
-                    <br />
-                    <code>@Post(&#x27;refresh-tokens&#x27;)<br />@HttpCode(HttpStatus.OK)<br />@Auth(AuthType.none)<br /></code>
-                </td>
-            </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="23"
-                                    class="link-to-prism">src/auth/auth.controller.ts:23</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="20"
+                                    class="link-to-prism">src/auth/guards/authentication.guard.ts:20</a></div>
                         </td>
                     </tr>
 
@@ -235,9 +293,9 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>refreshTokenDto</td>
+                                                <td>context</td>
                                             <td>
-                                                            <code><a href="../classes/RefreshTokenDto.html" target="_self" >RefreshTokenDto</a></code>
+                                                        <code>ExecutionContext</code>
                                             </td>
 
                                             <td>
@@ -250,7 +308,7 @@
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>    <code>unknown</code>
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
 
                         </div>
                             <div class="io-description">
@@ -260,124 +318,56 @@
             </tr>
         </tbody>
     </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="signIn"></a>
-                    <span class="name">
-                            <span class="modifier"></span>
-                            <span class="modifier"></span>
-                            <span class="modifier"></span>
-                            <span class="modifier">Public</span>
-                            <span class="modifier">Async</span>
-                        <span ><b>signIn</b></span>
-                        <a href="#signIn"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>signIn(signinDto: <a href="../classes/SignInDto.html" target="_self">SignInDto</a>)</code>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <b>Decorators : </b>
-                    <br />
-                    <code>@Post(&#x27;sign-in&#x27;)<br />@HttpCode(HttpStatus.OK)<br />@Auth(AuthType.none)<br /></code>
-                </td>
-            </tr>
-
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="16"
-                                    class="link-to-prism">src/auth/auth.controller.ts:16</a></div>
-                        </td>
-                    </tr>
+</section>
+        </div>
 
 
-            <tr>
-                <td class="col-md-4">
+        <div class="tab-pane fade  tab-source-code" id="source">
+            <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CanActivate, ExecutionContext, Injectable, UnauthorizedException } from &#x27;@nestjs/common&#x27;;
+import { Reflector } from &#x27;@nestjs/core&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import { AccessTokenGuard } from &#x27;./access-token.guard&#x27;;
+import { AuthType } from &#x27;../enums/auth-type&#x27;;
+import { AUTH_TYPE_KEY } from &#x27;../constants/auth.constants&#x27;;
 
-                            <div class="io-description">
-                                <b>Parameters :</b>
-                                
-                                <table class="params">
-                                    <thead>
-                                        <tr>
-                                            <td>Name</td>
-                                                <td>Type</td>
-                                            <td>Optional</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                                <td>signinDto</td>
-                                            <td>
-                                                            <code><a href="../classes/SignInDto.html" target="_self" >SignInDto</a></code>
-                                            </td>
+@Injectable()
+export class AuthenticationGuard implements CanActivate {
 
-                                            <td>
-                                                    No
-                                            </td>
+  private static readonly defaultAuthType &#x3D; AuthType.Bearer;
 
+  private readonly authTypeGuardMap: Record&lt;AuthType, CanActivate | CanActivate[]&gt; &#x3D; {
+    [AuthType.Bearer]: this.accessTokenGuard,
+    [AuthType.none]: { canActivate: () &#x3D;&gt; true }
+  }
+  constructor(private readonly reflector: Reflector,
+    private readonly accessTokenGuard: AccessTokenGuard
+  ) { }
+  async canActivate(
+    context: ExecutionContext,
+  ): Promise&lt;boolean&gt; {
 
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        <div class="io-description">
-                            <b>Returns : </b>    <code>unknown</code>
+    const authTypes &#x3D; this.reflector.getAllAndOverride(AUTH_TYPE_KEY, [context.getHandler(), context.getClass()]) ?? [AuthenticationGuard.defaultAuthType]
+    const guards &#x3D; authTypes.map((type) &#x3D;&gt; this.authTypeGuardMap[type]).flat()
+    const error &#x3D; new UnauthorizedException()
 
-                        </div>
-                            <div class="io-description">
-                                
-                            </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>    </div>
+    for (const instance of guards) {
+      const canActivate &#x3D; await Promise.resolve(
 
+        instance.canActivate(context)
+      ).catch((error) &#x3D;&gt; {
+        eror: error;
+      })
 
-    <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Body, Controller, HttpCode, HttpStatus, Post } from &#x27;@nestjs/common&#x27;;
-import { AuthService } from &#x27;./service/auth.service&#x27;;
-import { SignInDto } from &#x27;./dtos/signin.dto&#x27;;
-import { Auth } from &#x27;./decorators/auth.decorator&#x27;;
-import { AuthType } from &#x27;./enums/auth-type&#x27;;
-import { RefreshTokenDto } from &#x27;./dtos/refresh-token.dto&#x27;;
-
-@Controller(&#x27;auth&#x27;)
-export class AuthController {
-
-    constructor(private readonly authService: AuthService) { }
-
-    @Post(&#x27;sign-in&#x27;)
-    @HttpCode(HttpStatus.OK)
-    @Auth(AuthType.none)
-    public async signIn(@Body() signinDto: SignInDto) {
-        return this.authService.signIn(signinDto)
+      if (canActivate) {
+        return true;
+      }
     }
-
-    @Post(&#x27;refresh-tokens&#x27;)
-    @HttpCode(HttpStatus.OK)
-    @Auth(AuthType.none)
-    public async refreshToken(@Body() refreshTokenDto: RefreshTokenDto) {
-        return this.authService.refreshToken(refreshTokenDto)
-    }
+    throw error;
+  }
 }
 </code></pre>
-    </div>
+        </div>
 </div>
-
-
-
-
-
 
 
 
@@ -414,8 +404,8 @@ export class AuthController {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'controller';
-            var COMPODOC_CURRENT_PAGE_URL = 'AuthController.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'guard';
+            var COMPODOC_CURRENT_PAGE_URL = 'AuthenticationGuard.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

@@ -152,6 +152,11 @@
                             <li>
                                     <span class="modifier">Public</span>
                                     <span class="modifier">Async</span>
+                                <a href="#createGoogleUser" >createGoogleUser</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
                                 <a href="#createMany" >createMany</a>
                             </li>
                             <li>
@@ -167,6 +172,11 @@
                                     <span class="modifier">Public</span>
                                     <span class="modifier">Async</span>
                                 <a href="#findOneByEmail" >findOneByEmail</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#findOneByGoogleId" >findOneByGoogleId</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -191,12 +201,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, userRepository: <a href="../entitys/User.html" target="_self">Repository&lt;User&gt;</a>, configService: ConfigService, profilConfiguration: ConfigType<>, usersCreateManyProvider: <a href="../injectables/UserCreateManyProvider.html" target="_self">UserCreateManyProvider</a>, createUsersProvider: <a href="../injectables/CreateUserProvider.html" target="_self">CreateUserProvider</a>, findOneUserByEmailProvider: <a href="../injectables/FindOneUserByEmailProvider.html" target="_self">FindOneUserByEmailProvider</a>)</code>
+<code>constructor(authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, userRepository: <a href="../entitys/User.html" target="_self">Repository&lt;User&gt;</a>, configService: ConfigService, profilConfiguration: ConfigType<>, usersCreateManyProvider: <a href="../injectables/UserCreateManyProvider.html" target="_self">UserCreateManyProvider</a>, createGoogleUserProvider: <a href="../injectables/CreateGoogleUserProvider.html" target="_self">CreateGoogleUserProvider</a>, createUsersProvider: <a href="../injectables/CreateUserProvider.html" target="_self">CreateUserProvider</a>, findOneByGoogleIdPrvider: <a href="../injectables/FindOneByGoogleIdProvider.html" target="_self">FindOneByGoogleIdProvider</a>, findOneUserByEmailProvider: <a href="../injectables/FindOneUserByEmailProvider.html" target="_self">FindOneUserByEmailProvider</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/users/providers/user.service.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/users/providers/user.service.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -274,10 +284,34 @@
                                                     
                                                 </tr>
                                                 <tr>
+                                                        <td>createGoogleUserProvider</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CreateGoogleUserProvider.html" target="_self" >CreateGoogleUserProvider</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
                                                         <td>createUsersProvider</td>
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/CreateUserProvider.html" target="_self" >CreateUserProvider</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>findOneByGoogleIdPrvider</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/FindOneByGoogleIdProvider.html" target="_self" >FindOneByGoogleIdProvider</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -315,6 +349,76 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="createGoogleUser"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>createGoogleUser</b></span>
+                        <a href="#createGoogleUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createGoogleUser(googleUser: <a href="../classes/GoogleUser.html" target="_self">GoogleUser</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="108"
+                                    class="link-to-prism">src/users/providers/user.service.ts:108</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>googleUser</td>
+                                            <td>
+                                                            <code><a href="../classes/GoogleUser.html" target="_self" >GoogleUser</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="createMany"></a>
                     <span class="name">
                             <span class="modifier">Public</span>
@@ -334,8 +438,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="92"
-                                    class="link-to-prism">src/users/providers/user.service.ts:92</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="96"
+                                    class="link-to-prism">src/users/providers/user.service.ts:96</a></div>
                         </td>
                     </tr>
 
@@ -404,8 +508,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="88"
-                                    class="link-to-prism">src/users/providers/user.service.ts:88</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="92"
+                                    class="link-to-prism">src/users/providers/user.service.ts:92</a></div>
                         </td>
                     </tr>
 
@@ -473,8 +577,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="35"
-                                    class="link-to-prism">src/users/providers/user.service.ts:35</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="39"
+                                    class="link-to-prism">src/users/providers/user.service.ts:39</a></div>
                         </td>
                     </tr>
 
@@ -569,8 +673,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="96"
-                                    class="link-to-prism">src/users/providers/user.service.ts:96</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="100"
+                                    class="link-to-prism">src/users/providers/user.service.ts:100</a></div>
                         </td>
                     </tr>
 
@@ -620,6 +724,76 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="findOneByGoogleId"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>findOneByGoogleId</b></span>
+                        <a href="#findOneByGoogleId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>findOneByGoogleId(googleId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="104"
+                                    class="link-to-prism">src/users/providers/user.service.ts:104</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>googleId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="findOneById"></a>
                     <span class="name">
                             <span class="modifier">Public</span>
@@ -639,8 +813,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="67"
-                                    class="link-to-prism">src/users/providers/user.service.ts:67</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="71"
+                                    class="link-to-prism">src/users/providers/user.service.ts:71</a></div>
                         </td>
                     </tr>
 
@@ -707,6 +881,9 @@ import { UserCreateManyProvider } from &quot;./user-create-many.provider&quot;;
 import { CreateManyUsersDTO } from &quot;../dtos/create-many-user.dto&quot;;
 import { CreateUserProvider } from &quot;./create-user.provider&quot;;
 import { FindOneUserByEmailProvider } from &quot;./find-one-user-by-email.provider&quot;;
+import { FindOneByGoogleIdProvider } from &quot;./find-one-by-google-id.provider&quot;;
+import { CreateGoogleUserProvider } from &quot;./create-google-user.provider&quot;;
+import { GoogleUser } from &quot;../interfaces/google-user.interface&quot;;
 
 /**
  * Class to connect to Users table and perform business operations
@@ -720,8 +897,9 @@ export class UserService {
         private readonly configService: ConfigService,
         @Inject(profileConfig.KEY) private readonly profilConfiguration: ConfigType&lt;typeof profileConfig&gt;,
         private readonly usersCreateManyProvider: UserCreateManyProvider,
-
+        private readonly createGoogleUserProvider: CreateGoogleUserProvider,
         private readonly createUsersProvider: CreateUserProvider,
+        private readonly findOneByGoogleIdPrvider: FindOneByGoogleIdProvider,
         private readonly findOneUserByEmailProvider: FindOneUserByEmailProvider
     ) { }
 
@@ -793,6 +971,13 @@ export class UserService {
         return await this.findOneUserByEmailProvider.findOneByEmail(email)
     }
 
+    public async findOneByGoogleId(googleId: string) {
+        return this.findOneByGoogleIdPrvider.findOneByGoogleId(googleId)
+    }
+
+    public async createGoogleUser(googleUser: GoogleUser) {
+        return await this.createGoogleUserProvider.createGoogleUser(googleUser)
+    }
 }</code></pre>
     </div>
 

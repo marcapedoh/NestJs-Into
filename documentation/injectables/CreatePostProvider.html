@@ -86,16 +86,19 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content controller">
+               <div class="content injectable">
                    <div class="content-data">
 
 
 
 
 
+
+
+
 <ol class="breadcrumb">
-  <li class="breadcrumb-item">Controllers</li>
-  <li class="breadcrumb-item" >AuthController</li>
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >CreatePostProvider</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -119,16 +122,8 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/auth/auth.controller.ts</code>
+            <code>src/post/services/create-post.provider.ts</code>
         </p>
-
-            <p class="comment">
-                <h3>Prefix</h3>
-            </p>
-            <p class="comment">
-                <code>auth</code>
-            </p>
-
 
 
 
@@ -148,20 +143,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier"></span>
-                                    <span class="modifier"></span>
-                                    <span class="modifier"></span>
                                     <span class="modifier">Public</span>
                                     <span class="modifier">Async</span>
-                                <a href="#refreshToken" >refreshToken</a>
-                            </li>
-                            <li>
-                                    <span class="modifier"></span>
-                                    <span class="modifier"></span>
-                                    <span class="modifier"></span>
-                                    <span class="modifier">Public</span>
-                                    <span class="modifier">Async</span>
-                                <a href="#signIn" >signIn</a>
+                                <a href="#createPost" >createPost</a>
                             </li>
                         </ul>
                     </td>
@@ -175,6 +159,79 @@
     </table>
 </section>
 
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(postRepository: <a href="../entitys/Post.html" target="_self">Repository&lt;Post&gt;</a>, tagsService: <a href="../injectables/TagsService.html" target="_self">TagsService</a>, userService: <a href="../injectables/UserService.html" target="_self">UserService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/post/services/create-post.provider.ts:11</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>postRepository</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../entitys/Post.html" target="_self" >Repository&lt;Post&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>tagsService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/TagsService.html" target="_self" >TagsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>userService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
             <section data-compodoc="block-methods">
     
     <h3 id="methods">
@@ -184,37 +241,27 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="refreshToken"></a>
+                    <a name="createPost"></a>
                     <span class="name">
-                            <span class="modifier"></span>
-                            <span class="modifier"></span>
-                            <span class="modifier"></span>
                             <span class="modifier">Public</span>
                             <span class="modifier">Async</span>
-                        <span ><b>refreshToken</b></span>
-                        <a href="#refreshToken"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>createPost</b></span>
+                        <a href="#createPost"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>refreshToken(refreshTokenDto: <a href="../classes/RefreshTokenDto.html" target="_self">RefreshTokenDto</a>)</code>
+                    <code>createPost(createPostDto: <a href="../classes/CreatePostDto.html" target="_self">CreatePostDto</a>, user: <a href="../interfaces/ActiveUserData.html" target="_self">ActiveUserData</a>)</code>
                 </td>
             </tr>
 
-            <tr>
-                <td class="col-md-4">
-                    <b>Decorators : </b>
-                    <br />
-                    <code>@Post(&#x27;refresh-tokens&#x27;)<br />@HttpCode(HttpStatus.OK)<br />@Auth(AuthType.none)<br /></code>
-                </td>
-            </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="23"
-                                    class="link-to-prism">src/auth/auth.controller.ts:23</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="20"
+                                    class="link-to-prism">src/post/services/create-post.provider.ts:20</a></div>
                         </td>
                     </tr>
 
@@ -235,9 +282,21 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>refreshTokenDto</td>
+                                                <td>createPostDto</td>
                                             <td>
-                                                            <code><a href="../classes/RefreshTokenDto.html" target="_self" >RefreshTokenDto</a></code>
+                                                            <code><a href="../classes/CreatePostDto.html" target="_self" >CreatePostDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../interfaces/ActiveUserData.html" target="_self" >ActiveUserData</a></code>
                                             </td>
 
                                             <td>
@@ -260,122 +319,71 @@
             </tr>
         </tbody>
     </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="signIn"></a>
-                    <span class="name">
-                            <span class="modifier"></span>
-                            <span class="modifier"></span>
-                            <span class="modifier"></span>
-                            <span class="modifier">Public</span>
-                            <span class="modifier">Async</span>
-                        <span ><b>signIn</b></span>
-                        <a href="#signIn"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>signIn(signinDto: <a href="../classes/SignInDto.html" target="_self">SignInDto</a>)</code>
-                </td>
-            </tr>
+</section>
 
-            <tr>
-                <td class="col-md-4">
-                    <b>Decorators : </b>
-                    <br />
-                    <code>@Post(&#x27;sign-in&#x27;)<br />@HttpCode(HttpStatus.OK)<br />@Auth(AuthType.none)<br /></code>
-                </td>
-            </tr>
-
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="16"
-                                    class="link-to-prism">src/auth/auth.controller.ts:16</a></div>
-                        </td>
-                    </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                            <div class="io-description">
-                                <b>Parameters :</b>
-                                
-                                <table class="params">
-                                    <thead>
-                                        <tr>
-                                            <td>Name</td>
-                                                <td>Type</td>
-                                            <td>Optional</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                                <td>signinDto</td>
-                                            <td>
-                                                            <code><a href="../classes/SignInDto.html" target="_self" >SignInDto</a></code>
-                                            </td>
-
-                                            <td>
-                                                    No
-                                            </td>
-
-
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        <div class="io-description">
-                            <b>Returns : </b>    <code>unknown</code>
-
-                        </div>
-                            <div class="io-description">
-                                
-                            </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>    </div>
+    </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Body, Controller, HttpCode, HttpStatus, Post } from &#x27;@nestjs/common&#x27;;
-import { AuthService } from &#x27;./service/auth.service&#x27;;
-import { SignInDto } from &#x27;./dtos/signin.dto&#x27;;
-import { Auth } from &#x27;./decorators/auth.decorator&#x27;;
-import { AuthType } from &#x27;./enums/auth-type&#x27;;
-import { RefreshTokenDto } from &#x27;./dtos/refresh-token.dto&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BadRequestException, ConflictException, Injectable } from &#x27;@nestjs/common&#x27;;
+import { CreatePostDto } from &#x27;../dtos/create-post.dtos&#x27;;
+import { InjectRepository } from &#x27;@nestjs/typeorm&#x27;;
+import { Repository } from &#x27;typeorm&#x27;;
+import { Post } from &#x27;../post.entity&#x27;;
+import { TagsService } from &#x27;src/tags/providers/tags.service&#x27;;
+import { UserService } from &#x27;src/users/providers/user.service&#x27;;
+import { ActiveUserData } from &#x27;src/auth/interfaces/active-user-data.interface&#x27;;
 
-@Controller(&#x27;auth&#x27;)
-export class AuthController {
+@Injectable()
+export class CreatePostProvider {
 
-    constructor(private readonly authService: AuthService) { }
+    constructor(
+        @InjectRepository(Post) private readonly postRepository: Repository&lt;Post&gt;,
+        private readonly tagsService: TagsService,
+        private readonly userService: UserService,
 
-    @Post(&#x27;sign-in&#x27;)
-    @HttpCode(HttpStatus.OK)
-    @Auth(AuthType.none)
-    public async signIn(@Body() signinDto: SignInDto) {
-        return this.authService.signIn(signinDto)
-    }
 
-    @Post(&#x27;refresh-tokens&#x27;)
-    @HttpCode(HttpStatus.OK)
-    @Auth(AuthType.none)
-    public async refreshToken(@Body() refreshTokenDto: RefreshTokenDto) {
-        return this.authService.refreshToken(refreshTokenDto)
+    ) { }
+    public async createPost(createPostDto: CreatePostDto, user: ActiveUserData) {
+        //let metaOptions &#x3D; createPostDto.metaOptions ? this.metaOptionRepository.create(createPostDto.metaOptions) : null
+        let author &#x3D; undefined;
+        let tags &#x3D; undefined;
+        try {
+            tags &#x3D; await this.tagsService.findMultpleTags(createPostDto.tags)
+            author &#x3D; await this.userService.findOneById(user.sub);
+        } catch (error) {
+            throw new ConflictException(error)
+        }
+
+        if (createPostDto.tags.length &#x3D;&#x3D;&#x3D; tags.length) {
+            throw new BadRequestException(&quot;please checks your tag  ids&quot;)
+        }
+        let post &#x3D; this.postRepository.create({
+            ...createPostDto,
+            author: author,
+            tags: tags
+        })
+        /*
+        if (metaOptions) {
+                    await this.metaOptionRepository.save(metaOptions);
+                }
+                if (metaOptions) {
+                    post.metaOptions &#x3D; metaOptions
+                }*/
+        try {
+
+            return await this.postRepository.save(post)
+        } catch (error) {
+            throw new ConflictException(error, {
+                description: &quot; ensure post slug is unique inside and not duplicate&quot;
+            })
+        }
     }
 }
 </code></pre>
     </div>
+
 </div>
-
-
-
 
 
 
@@ -414,8 +422,8 @@ export class AuthController {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'controller';
-            var COMPODOC_CURRENT_PAGE_URL = 'AuthController.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'CreatePostProvider.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

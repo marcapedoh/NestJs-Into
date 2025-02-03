@@ -180,12 +180,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(userService: <a href="../injectables/UserService.html" target="_self">UserService</a>, postRepository: <a href="../entitys/Post.html" target="_self">Repository&lt;Post&gt;</a>, metaOptionRepository: <a href="../entitys/MetaOption.html" target="_self">Repository&lt;MetaOption&gt;</a>, tagsService: <a href="../injectables/TagsService.html" target="_self">TagsService</a>, paginationProvider: <a href="../injectables/PaginationProvider.html" target="_self">PaginationProvider</a>)</code>
+<code>constructor(userService: <a href="../injectables/UserService.html" target="_self">UserService</a>, postRepository: <a href="../entitys/Post.html" target="_self">Repository&lt;Post&gt;</a>, tagsService: <a href="../injectables/TagsService.html" target="_self">TagsService</a>, paginationProvider: <a href="../injectables/PaginationProvider.html" target="_self">PaginationProvider</a>, createPostProvider: <a href="../injectables/CreatePostProvider.html" target="_self">CreatePostProvider</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/post/services/post.service.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/post/services/post.service.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -227,18 +227,6 @@
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>metaOptionRepository</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../entitys/MetaOption.html" target="_self" >Repository&lt;MetaOption&gt;</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
                                                         <td>tagsService</td>
                                                   
                                                         <td>
@@ -255,6 +243,18 @@
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/PaginationProvider.html" target="_self" >PaginationProvider</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>createPostProvider</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CreatePostProvider.html" target="_self" >CreatePostProvider</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -292,15 +292,15 @@
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>createPost(createPostDto: <a href="../classes/CreatePostDto.html" target="_self">CreatePostDto</a>)</code>
+                    <code>createPost(createPostDto: <a href="../classes/CreatePostDto.html" target="_self">CreatePostDto</a>, user: <a href="../interfaces/ActiveUserData.html" target="_self">ActiveUserData</a>)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="44"
-                                    class="link-to-prism">src/post/services/post.service.ts:44</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="50"
+                                    class="link-to-prism">src/post/services/post.service.ts:50</a></div>
                         </td>
                     </tr>
 
@@ -324,6 +324,18 @@
                                                 <td>createPostDto</td>
                                             <td>
                                                             <code><a href="../classes/CreatePostDto.html" target="_self" >CreatePostDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../interfaces/ActiveUserData.html" target="_self" >ActiveUserData</a></code>
                                             </td>
 
                                             <td>
@@ -369,8 +381,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="65"
-                                    class="link-to-prism">src/post/services/post.service.ts:65</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="54"
+                                    class="link-to-prism">src/post/services/post.service.ts:54</a></div>
                         </td>
                     </tr>
 
@@ -439,8 +451,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="25"
-                                    class="link-to-prism">src/post/services/post.service.ts:25</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="31"
+                                    class="link-to-prism">src/post/services/post.service.ts:31</a></div>
                         </td>
                     </tr>
 
@@ -521,8 +533,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="85"
-                                    class="link-to-prism">src/post/services/post.service.ts:85</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="74"
+                                    class="link-to-prism">src/post/services/post.service.ts:74</a></div>
                         </td>
                     </tr>
 
@@ -586,18 +598,24 @@ import { PatchPostDto } from &#x27;../dtos/patch-post-dto&#x27;;
 import { GetPostDto } from &#x27;../dtos/get-posts.dto&#x27;;
 import { PaginationProvider } from &#x27;src/common/pagination/providers/pagination.provider&#x27;;
 import { Paginated } from &#x27;src/common/pagination/interfaces/paginated.interface&#x27;;
+import { CreatePostProvider } from &#x27;./create-post.provider&#x27;;
+import { ActiveUserData } from &#x27;src/auth/interfaces/active-user-data.interface&#x27;;
 @Injectable()
 export class PostService {
 
-    constructor(private readonly userService: UserService,
+    constructor(
+        private readonly userService: UserService,
         @InjectRepository(Post) private readonly postRepository: Repository&lt;Post&gt;,
 
-        @InjectRepository(MetaOption) private readonly metaOptionRepository: Repository&lt;MetaOption&gt;,
+        //@InjectRepository(MetaOption) private readonly metaOptionRepository: Repository&lt;MetaOption&gt;,
 
         private readonly tagsService: TagsService,
 
-        private readonly paginationProvider: PaginationProvider
+        private readonly paginationProvider: PaginationProvider,
+
+        private readonly createPostProvider: CreatePostProvider
     ) { }
+
     public async findAll(postQuery: GetPostDto, userId: string): Promise&lt;Paginated&lt;Post&gt;&gt; {
         /*const user &#x3D; await this.userService.findOneById(+userId);
         let posts &#x3D; await this.postRepository.find({
@@ -617,25 +635,8 @@ export class PostService {
         return posts
     }
 
-    public async createPost(createPostDto: CreatePostDto) {
-        //let metaOptions &#x3D; createPostDto.metaOptions ? this.metaOptionRepository.create(createPostDto.metaOptions) : null
-
-        let tags &#x3D; await this.tagsService.findMultpleTags(createPostDto.tags)
-        let author &#x3D; await this.userService.findOneById(createPostDto.authorId);
-        let post &#x3D; this.postRepository.create({
-            ...createPostDto,
-            author: author,
-            tags: tags
-        })
-        /*
-        if (metaOptions) {
-                    await this.metaOptionRepository.save(metaOptions);
-                }
-                if (metaOptions) {
-                    post.metaOptions &#x3D; metaOptions
-                }*/
-
-        return await this.postRepository.save(post)
+    public async createPost(createPostDto: CreatePostDto, user: ActiveUserData) {
+        return await this.createPostProvider.createPost(createPostDto, user)
     }
 
     public async delete(id: number) {

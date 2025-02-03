@@ -165,12 +165,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(userService: <a href="../injectables/UserService.html" target="_self">UserService</a>, hashingProvider: <a href="../injectables/HashingProvider.html" target="_self">HashingProvider</a>, jwtService: JwtService, jwtConfiguration: ConfigType<>)</code>
+<code>constructor(userService: <a href="../injectables/UserService.html" target="_self">UserService</a>, hashingProvider: <a href="../injectables/HashingProvider.html" target="_self">HashingProvider</a>, jwtService: JwtService, generateTokensProvider: <a href="../injectables/GenerateTokensProvider.html" target="_self">GenerateTokensProvider</a>, jwtConfiguration: ConfigType<>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/auth/providers/sign-in.provider.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/auth/providers/sign-in.provider.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -216,6 +216,18 @@
                                                   
                                                         <td>
                                                                     <code>JwtService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>generateTokensProvider</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/GenerateTokensProvider.html" target="_self" >GenerateTokensProvider</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -272,8 +284,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="21"
-                                    class="link-to-prism">src/auth/providers/sign-in.provider.ts:21</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="24"
+                                    class="link-to-prism">src/auth/providers/sign-in.provider.ts:24</a></div>
                         </td>
                     </tr>
 
@@ -332,6 +344,8 @@ import { HashingProvider } from &#x27;./hashing.provider&#x27;;
 import { JwtService } from &#x27;@nestjs/jwt&#x27;;
 import { ConfigType } from &#x27;@nestjs/config&#x27;;
 import jwtConfig from &#x27;../config/jwt.config&#x27;;
+import { ActiveUserData } from &#x27;../interfaces/active-user-data.interface&#x27;;
+import { GenerateTokensProvider } from &#x27;./generate-tokens.provider&#x27;;
 
 @Injectable()
 export class SignInProvider {
@@ -341,6 +355,7 @@ export class SignInProvider {
         private readonly userService: UserService,
         private readonly hashingProvider: HashingProvider,
         private readonly jwtService: JwtService,
+        private readonly generateTokensProvider: GenerateTokensProvider,
         @Inject(jwtConfig.KEY) private readonly jwtConfiguration: ConfigType&lt;typeof jwtConfig&gt;
     ) {
 
@@ -361,18 +376,7 @@ export class SignInProvider {
         if (!isEqual) {
             throw new UnauthorizedException(&quot;incorrect password&quot;)
         }
-        const accesToken &#x3D; await this.jwtService.signAsync({
-            sub: user.id,
-            email: user.email
-        }, {
-            audience: this.jwtConfiguration.audience,
-            issuer: this.jwtConfiguration.issuer,
-            secret: this.jwtConfiguration.secret,
-            expiresIn: this.jwtConfiguration.accessTokenTtl
-        })
-        return {
-            accesToken
-        };
+        return await this.generateTokensProvider.generateToken(user)
     }
 }
 </code></pre>

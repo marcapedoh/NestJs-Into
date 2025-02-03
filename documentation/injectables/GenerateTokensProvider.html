@@ -86,16 +86,19 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content controller">
+               <div class="content injectable">
                    <div class="content-data">
 
 
 
 
 
+
+
+
 <ol class="breadcrumb">
-  <li class="breadcrumb-item">Controllers</li>
-  <li class="breadcrumb-item" >AuthController</li>
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >GenerateTokensProvider</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -119,16 +122,8 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/auth/auth.controller.ts</code>
+            <code>src/auth/providers/generate-tokens.provider.ts</code>
         </p>
-
-            <p class="comment">
-                <h3>Prefix</h3>
-            </p>
-            <p class="comment">
-                <code>auth</code>
-            </p>
-
 
 
 
@@ -148,20 +143,14 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier"></span>
-                                    <span class="modifier"></span>
-                                    <span class="modifier"></span>
                                     <span class="modifier">Public</span>
                                     <span class="modifier">Async</span>
-                                <a href="#refreshToken" >refreshToken</a>
+                                <a href="#generateToken" >generateToken</a>
                             </li>
                             <li>
-                                    <span class="modifier"></span>
-                                    <span class="modifier"></span>
-                                    <span class="modifier"></span>
                                     <span class="modifier">Public</span>
                                     <span class="modifier">Async</span>
-                                <a href="#signIn" >signIn</a>
+                                <a href="#signToken" >signToken</a>
                             </li>
                         </ul>
                     </td>
@@ -175,6 +164,67 @@
     </table>
 </section>
 
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(jwtConfiguration: ConfigType<>, jwtService: JwtService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/auth/providers/generate-tokens.provider.ts:9</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>jwtConfiguration</td>
+                                                  
+                                                        <td>
+                                                                    <code>ConfigType&lt;&gt;</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>jwtService</td>
+                                                  
+                                                        <td>
+                                                                    <code>JwtService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
             <section data-compodoc="block-methods">
     
     <h3 id="methods">
@@ -184,37 +234,27 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="refreshToken"></a>
+                    <a name="generateToken"></a>
                     <span class="name">
-                            <span class="modifier"></span>
-                            <span class="modifier"></span>
-                            <span class="modifier"></span>
                             <span class="modifier">Public</span>
                             <span class="modifier">Async</span>
-                        <span ><b>refreshToken</b></span>
-                        <a href="#refreshToken"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>generateToken</b></span>
+                        <a href="#generateToken"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>refreshToken(refreshTokenDto: <a href="../classes/RefreshTokenDto.html" target="_self">RefreshTokenDto</a>)</code>
+                    <code>generateToken(user: <a href="../entitys/User.html" target="_self">User</a>)</code>
                 </td>
             </tr>
 
-            <tr>
-                <td class="col-md-4">
-                    <b>Decorators : </b>
-                    <br />
-                    <code>@Post(&#x27;refresh-tokens&#x27;)<br />@HttpCode(HttpStatus.OK)<br />@Auth(AuthType.none)<br /></code>
-                </td>
-            </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="23"
-                                    class="link-to-prism">src/auth/auth.controller.ts:23</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="30"
+                                    class="link-to-prism">src/auth/providers/generate-tokens.provider.ts:30</a></div>
                         </td>
                     </tr>
 
@@ -235,9 +275,9 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>refreshTokenDto</td>
+                                                <td>user</td>
                                             <td>
-                                                            <code><a href="../classes/RefreshTokenDto.html" target="_self" >RefreshTokenDto</a></code>
+                                                            <code><a href="../entitys/User.html" target="_self" >User</a></code>
                                             </td>
 
                                             <td>
@@ -264,40 +304,38 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="signIn"></a>
+                    <a name="signToken"></a>
                     <span class="name">
-                            <span class="modifier"></span>
-                            <span class="modifier"></span>
-                            <span class="modifier"></span>
                             <span class="modifier">Public</span>
                             <span class="modifier">Async</span>
-                        <span ><b>signIn</b></span>
-                        <a href="#signIn"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>signToken</b></span>
+                        <a href="#signToken"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>signIn(signinDto: <a href="../classes/SignInDto.html" target="_self">SignInDto</a>)</code>
+                    <code>signToken(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, expiresIn: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, payload?: T)</code>
                 </td>
             </tr>
 
-            <tr>
-                <td class="col-md-4">
-                    <b>Decorators : </b>
-                    <br />
-                    <code>@Post(&#x27;sign-in&#x27;)<br />@HttpCode(HttpStatus.OK)<br />@Auth(AuthType.none)<br /></code>
-                </td>
-            </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="16"
-                                    class="link-to-prism">src/auth/auth.controller.ts:16</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="17"
+                                    class="link-to-prism">src/auth/providers/generate-tokens.provider.ts:17</a></div>
                         </td>
                     </tr>
 
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Type parameters :</b>
+                            <ul class="type-parameters">
+                                    <li>T</li>
+                            </ul>
+                        </td>
+                    </tr>
 
             <tr>
                 <td class="col-md-4">
@@ -315,13 +353,37 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>signinDto</td>
+                                                <td>userId</td>
                                             <td>
-                                                            <code><a href="../classes/SignInDto.html" target="_self" >SignInDto</a></code>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
                                             </td>
 
                                             <td>
                                                     No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>expiresIn</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>payload</td>
+                                            <td>
+                                                        <code>T</code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
                                             </td>
 
 
@@ -340,42 +402,58 @@
             </tr>
         </tbody>
     </table>
-</section>    </div>
+</section>
+
+    </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Body, Controller, HttpCode, HttpStatus, Post } from &#x27;@nestjs/common&#x27;;
-import { AuthService } from &#x27;./service/auth.service&#x27;;
-import { SignInDto } from &#x27;./dtos/signin.dto&#x27;;
-import { Auth } from &#x27;./decorators/auth.decorator&#x27;;
-import { AuthType } from &#x27;./enums/auth-type&#x27;;
-import { RefreshTokenDto } from &#x27;./dtos/refresh-token.dto&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Injectable } from &#x27;@nestjs/common&#x27;;
+import { ConfigType } from &#x27;@nestjs/config&#x27;;
+import jwtConfig from &#x27;../config/jwt.config&#x27;;
+import { JwtService } from &#x27;@nestjs/jwt&#x27;;
+import { User } from &#x27;src/users/user.entity&#x27;;
+import { ActiveUserData } from &#x27;../interfaces/active-user-data.interface&#x27;;
 
-@Controller(&#x27;auth&#x27;)
-export class AuthController {
+@Injectable()
+export class GenerateTokensProvider {
 
-    constructor(private readonly authService: AuthService) { }
+    constructor(
+        @Inject(jwtConfig.KEY) private readonly jwtConfiguration: ConfigType&lt;typeof jwtConfig&gt;,
+        private readonly jwtService: JwtService
+    ) { }
 
-    @Post(&#x27;sign-in&#x27;)
-    @HttpCode(HttpStatus.OK)
-    @Auth(AuthType.none)
-    public async signIn(@Body() signinDto: SignInDto) {
-        return this.authService.signIn(signinDto)
+
+    public async signToken&lt;T&gt;(userId: number, expiresIn: number, payload?: T) {
+        return await this.jwtService.signAsync({
+            sub: userId,
+            ...payload
+        }, {
+            audience: this.jwtConfiguration.audience,
+            issuer: this.jwtConfiguration.issuer,
+            secret: this.jwtConfiguration.secret,
+            expiresIn
+        })
+
     }
 
-    @Post(&#x27;refresh-tokens&#x27;)
-    @HttpCode(HttpStatus.OK)
-    @Auth(AuthType.none)
-    public async refreshToken(@Body() refreshTokenDto: RefreshTokenDto) {
-        return this.authService.refreshToken(refreshTokenDto)
+    public async generateToken(user: User) {
+        const [accessToken, refreshToken] &#x3D; await Promise.all([
+            this.signToken&lt;Partial&lt;ActiveUserData&gt;&gt;(user.id, this.jwtConfiguration.accessTokenTtl, { email: user.email }),
+
+            this.signToken(user.id, this.jwtConfiguration.refreshTokenTtl)
+        ])
+
+        return {
+            accessToken,
+            refreshToken
+        }
     }
 }
 </code></pre>
     </div>
+
 </div>
-
-
-
 
 
 
@@ -414,8 +492,8 @@ export class AuthController {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'controller';
-            var COMPODOC_CURRENT_PAGE_URL = 'AuthController.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'GenerateTokensProvider.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

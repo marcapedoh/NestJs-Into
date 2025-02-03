@@ -349,6 +349,8 @@ import { JwtModule } from &#x27;@nestjs/jwt&#x27;;
 import jwtConfig from &#x27;./auth/config/jwt.config&#x27;;
 import { APP_GUARD } from &#x27;@nestjs/core&#x27;;
 import { AccessTokenGuard } from &#x27;./auth/guards/access-token.guard&#x27;;
+import { AuthenticationGuard } from &#x27;./auth/guards/authentication.guard&#x27;;
+import { CreatePostProvider } from &#x27;./post/services/create-post.provider&#x27;;
 
 const ENV &#x3D; process.env.NODE_ENV;
 @Module({
@@ -385,8 +387,10 @@ const ENV &#x3D; process.env.NODE_ENV;
   providers: [AppService,
     {
       provide: APP_GUARD,
-      useClass: AccessTokenGuard
-    }
+      useClass: AuthenticationGuard
+    },
+    AccessTokenGuard,
+
   ],
 })
 export class AppModule { }

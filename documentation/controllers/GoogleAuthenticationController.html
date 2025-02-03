@@ -86,190 +86,201 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content miscellaneous-variables">
+               <div class="content controller">
                    <div class="content-data">
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 <ol class="breadcrumb">
-  <li class="breadcrumb-item">Miscellaneous</li>
-  <li class="breadcrumb-item">Variables</li>
+  <li class="breadcrumb-item">Controllers</li>
+  <li class="breadcrumb-item" >GoogleAuthenticationController</li>
 </ol>
 
-<section data-compodoc="block-index">
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/auth/social/google-authentication.controller.ts</code>
+        </p>
+
+            <p class="comment">
+                <h3>Prefix</h3>
+            </p>
+            <p class="comment">
+                <code>google-authentication</code>
+            </p>
+
+
+
+
+
+
+            <section data-compodoc="block-index">
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <ul class="index-list">
-                        <li>
-                            <a href="#ActiveUser" title="src/auth/decorators/active-user.decorator.ts" ><b>ActiveUser</b>&nbsp;&nbsp;&nbsp;(src/.../active-user.decorator.ts)</a>
-                        </li>
-                        <li>
-                            <a href="#Auth" title="src/auth/decorators/auth.decorator.ts" ><b>Auth</b>&nbsp;&nbsp;&nbsp;(src/.../auth.decorator.ts)</a>
-                        </li>
-                        <li>
-                            <a href="#AUTH_TYPE_KEY" title="src/auth/constants/auth.constants.ts" ><b>AUTH_TYPE_KEY</b>&nbsp;&nbsp;&nbsp;(src/.../auth.constants.ts)</a>
-                        </li>
-                        <li>
-                            <a href="#ENV" title="src/app.module.ts" ><b>ENV</b>&nbsp;&nbsp;&nbsp;(src/.../app.module.ts)</a>
-                        </li>
-                        <li>
-                            <a href="#REQUEST_USER_KEY" title="src/auth/constants/auth.constants.ts" ><b>REQUEST_USER_KEY</b>&nbsp;&nbsp;&nbsp;(src/.../auth.constants.ts)</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>
 
-    <h3>src/auth/decorators/active-user.decorator.ts</h3>
-    <section data-compodoc="block-properties">
-    <h3></h3>    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="ActiveUser"></a>
-                    <span class="name">
-                        <span ><b>ActiveUser</b></span>
-                        <a href="#ActiveUser"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>createParamDecorator(
-    (field: keyof ActiveUserData | undefined, ctx: ExecutionContext) &#x3D;&gt; {
-        const request &#x3D; ctx.switchToHttp().getRequest()
-        const user: ActiveUserData &#x3D; request[REQUEST_USER_KEY]
-        return field ? user?.[field] : user
-    }
-)</code>
+                        <h6><b>Methods</b></h6>
                     </td>
                 </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Public</span>
+                                <a href="#authenticate" >authenticate</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
 
 
         </tbody>
     </table>
 </section>
-    <h3>src/auth/decorators/auth.decorator.ts</h3>
-    <section data-compodoc="block-properties">
-    <h3></h3>    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="Auth"></a>
-                    <span class="name">
-                        <span ><b>Auth</b></span>
-                        <a href="#Auth"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>(...authTypes: AuthType[]) &#x3D;&gt; SetMetadata(AUTH_TYPE_KEY, authTypes)</code>
-                    </td>
-                </tr>
 
-
-        </tbody>
-    </table>
-</section>
-    <h3>src/auth/constants/auth.constants.ts</h3>
-    <section data-compodoc="block-properties">
-    <h3></h3>    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="AUTH_TYPE_KEY"></a>
-                    <span class="name">
-                        <span ><b>AUTH_TYPE_KEY</b></span>
-                        <a href="#AUTH_TYPE_KEY"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>&#x27;authType&#x27;</code>
-                    </td>
-                </tr>
-
-
-        </tbody>
-    </table>
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="REQUEST_USER_KEY"></a>
+                    <a name="authenticate"></a>
                     <span class="name">
-                        <span ><b>REQUEST_USER_KEY</b></span>
-                        <a href="#REQUEST_USER_KEY"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier"></span>
+                            <span class="modifier">Public</span>
+                        <span ><b>authenticate</b></span>
+                        <a href="#authenticate"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>&#x27;user&#x27;</code>
-                    </td>
-                </tr>
-
-
-        </tbody>
-    </table>
-</section>
-    <h3>src/app.module.ts</h3>
-    <section data-compodoc="block-properties">
-    <h3></h3>    <table class="table table-sm table-bordered">
-        <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="ENV"></a>
-                    <span class="name">
-                        <span ><b>ENV</b></span>
-                        <a href="#ENV"><span class="icon ion-ios-link"></span></a>
-                    </span>
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>authenticate(googleTokenDto: <a href="../classes/GoogleTokenDto.html" target="_self">GoogleTokenDto</a>)</code>
                 </td>
             </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>process.env.NODE_ENV</code>
-                    </td>
-                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Post()<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="12"
+                                    class="link-to-prism">src/auth/social/google-authentication.controller.ts:12</a></div>
+                        </td>
+                    </tr>
 
 
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>googleTokenDto</td>
+                                            <td>
+                                                            <code><a href="../classes/GoogleTokenDto.html" target="_self" >GoogleTokenDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
         </tbody>
     </table>
-</section>
+</section>    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Body, Controller, Post } from &#x27;@nestjs/common&#x27;;
+import { GoogleAuthenticationService } from &#x27;./providers/google-authentication.service&#x27;;
+import { GoogleTokenDto } from &#x27;./dtos/google-token.dto&#x27;;
+
+@Controller(&#x27;google-authentication&#x27;)
+export class GoogleAuthenticationController {
+
+    constructor(private readonly googleAuthenticationService: GoogleAuthenticationService) { }
+
+
+    @Post()
+    public authenticate(@Body() googleTokenDto: GoogleTokenDto) {
+        return this.googleAuthenticationService.authenticate(googleTokenDto)
+    }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -298,8 +309,8 @@
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-variables';
-            var COMPODOC_CURRENT_PAGE_URL = 'variables.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'controller';
+            var COMPODOC_CURRENT_PAGE_URL = 'GoogleAuthenticationController.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

@@ -93,7 +93,7 @@
 
 <ol class="breadcrumb">
     <li class="breadcrumb-item">Modules</li>
-    <li class="breadcrumb-item" >UploadsModule</li>
+    <li class="breadcrumb-item" >MailModule</li>
 </ol>
 
 <div class="text-center module-graph-container">
@@ -121,42 +121,30 @@
 <polygon fill="#fb8072" stroke="transparent" points="406,-10 406,-30 426,-30 426,-10 406,-10"/>
 <text text-anchor="start" x="429.73" y="-15.4" font-family="Times-12" font-size="14.00"> &#160;Exports</text>
 <g id="clust1" class="cluster">
-<title>cluster_UploadsModule</title>
-<polygon fill="none" stroke="black" stroke-dasharray="1,5" points="50,-70 50,-195 446,-195 446,-70 50,-70"/>
+<title>cluster_MailModule</title>
+<polygon fill="none" stroke="black" stroke-dasharray="1,5" points="174,-70 174,-195 322,-195 322,-70 174,-70"/>
 </g>
 <g id="clust6" class="cluster">
-<title>cluster_UploadsModule_providers</title>
-<polygon fill="none" stroke="black" points="58,-78 58,-130 438,-130 438,-78 58,-78"/>
+<title>cluster_MailModule_providers</title>
+<polygon fill="none" stroke="black" points="182,-78 182,-130 314,-130 314,-78 182,-78"/>
 </g>
-<!-- UploadToAwsProvider -->
+<!-- MailService -->
 <g id="node1" class="node">
-<title>UploadToAwsProvider</title>
-<ellipse fill="#fdb462" stroke="black" cx="329" cy="-104" rx="101.29" ry="18"/>
-<text text-anchor="middle" x="329" y="-99.8" font-family="Times,serif" font-size="14.00">UploadToAwsProvider</text>
+<title>MailService</title>
+<ellipse fill="#fdb462" stroke="black" cx="248" cy="-104" rx="58.46" ry="18"/>
+<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00">MailService</text>
 </g>
-<!-- UploadsModule -->
-<g id="node3" class="node">
-<title>UploadsModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="286.21,-187 283.21,-191 262.21,-191 259.21,-187 179.79,-187 179.79,-151 286.21,-151 286.21,-187"/>
-<text text-anchor="middle" x="233" y="-164.8" font-family="Times,serif" font-size="14.00">UploadsModule</text>
-</g>
-<!-- UploadToAwsProvider&#45;&gt;UploadsModule -->
-<g id="edge1" class="edge">
-<title>UploadToAwsProvider&#45;&gt;UploadsModule</title>
-<path fill="none" stroke="black" d="M256.98,-116.84C256.98,-116.84 256.98,-140.52 256.98,-140.52"/>
-<polygon fill="black" stroke="black" points="253.48,-140.52 256.98,-150.52 260.48,-140.52 253.48,-140.52"/>
-</g>
-<!-- UploadsService -->
+<!-- MailModule -->
 <g id="node2" class="node">
-<title>UploadsService</title>
-<ellipse fill="#fdb462" stroke="black" cx="138" cy="-104" rx="72.35" ry="18"/>
-<text text-anchor="middle" x="138" y="-99.8" font-family="Times,serif" font-size="14.00">UploadsService</text>
+<title>MailModule</title>
+<polygon fill="#8dd3c7" stroke="black" points="290.99,-187 287.99,-191 266.99,-191 263.99,-187 205.01,-187 205.01,-151 290.99,-151 290.99,-187"/>
+<text text-anchor="middle" x="248" y="-164.8" font-family="Times,serif" font-size="14.00">MailModule</text>
 </g>
-<!-- UploadsService&#45;&gt;UploadsModule -->
-<g id="edge2" class="edge">
-<title>UploadsService&#45;&gt;UploadsModule</title>
-<path fill="none" stroke="black" d="M195.04,-115.32C195.04,-115.32 195.04,-140.94 195.04,-140.94"/>
-<polygon fill="black" stroke="black" points="191.54,-140.94 195.04,-150.94 198.54,-140.94 191.54,-140.94"/>
+<!-- MailService&#45;&gt;MailModule -->
+<g id="edge1" class="edge">
+<title>MailService&#45;&gt;MailModule</title>
+<path fill="none" stroke="black" d="M248,-122.11C248,-122.11 248,-140.99 248,-140.99"/>
+<polygon fill="black" stroke="black" points="244.5,-140.99 248,-150.99 251.5,-140.99 244.5,-140.99"/>
 </g>
 </g>
 </svg>
@@ -194,7 +182,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/uploads/uploads.module.ts</code>
+            <code>src/mail/mail.module.ts</code>
         </p>
 
 
@@ -208,20 +196,7 @@
                             title="Official documentation about module providers"><span class="icon ion-ios-information-circle-outline"></a></h3>
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <a href="../injectables/UploadToAwsProvider.html">UploadToAwsProvider</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../injectables/UploadsService.html">UploadsService</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-sm-3">
-                    <h3>Controllers<a href="https://docs.nestjs.com/controllers" target="_blank" rel="noopener noreferrer"
-                            title="Official documentation about module controllers"><span
-                                class="icon ion-ios-information-circle-outline"></a></h3>
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <a href="../controllers/UploadsController.html">UploadsController</a>
+                            <a href="../injectables/MailService.html">MailService</a>
                         </li>
                     </ul>
                 </div>
@@ -234,18 +209,12 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Module } from &#x27;@nestjs/common&#x27;;
-import { UploadsController } from &#x27;./uploads.controller&#x27;;
-import { UploadsService } from &#x27;./providers/uploads.service&#x27;;
-import { UploadToAwsProvider } from &#x27;./providers/upload-to-aws.provider&#x27;;
-import { TypeOrmModule } from &#x27;@nestjs/typeorm&#x27;;
-import { Upload } from &#x27;./upload.entity&#x27;;
+import { MailService } from &#x27;./providers/mail.service&#x27;;
 
 @Module({
-  controllers: [UploadsController],
-  providers: [UploadsService, UploadToAwsProvider],
-  imports: [TypeOrmModule.forFeature([Upload])]
+  providers: [MailService]
 })
-export class UploadsModule { }
+export class MailModule {}
 </code></pre>
     </div>
 </div>
@@ -292,7 +261,7 @@ export class UploadsModule { }
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
-            var COMPODOC_CURRENT_PAGE_URL = 'UploadsModule.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'MailModule.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

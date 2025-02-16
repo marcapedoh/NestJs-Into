@@ -4,13 +4,15 @@ import { Repository } from 'typeorm';
 import { User } from '../user.entity';
 import { HashingProvider } from 'src/auth/providers/hashing.provider';
 import { InjectRepository } from '@nestjs/typeorm';
+import { MailService } from 'src/mail/providers/mail.service';
 
 @Injectable()
 export class CreateUserProvider {
 
     constructor(
         @InjectRepository(User) private readonly userRepository: Repository<User>,
-        @Inject(forwardRef(() => HashingProvider)) private readonly hashingProvider: HashingProvider
+        @Inject(forwardRef(() => HashingProvider)) private readonly hashingProvider: HashingProvider,
+        private readonly mailService: MailService
     ) { }
 
     public async createUser(createUserDto: CreateUserDto) {
@@ -42,6 +44,12 @@ export class CreateUserProvider {
             throw new RequestTimeoutException('Unable to process your request at the moment please try later', {
                 description: 'Error connecting to the database'
             })
+        }
+
+        try {
+            this.mailService.sendUserWelcome(newUser)
+        } catch (error) {
+            throw new RequestTimeoutException(error)
         }
         return newUser
     }

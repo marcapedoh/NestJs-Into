@@ -23,6 +23,7 @@ import { AuthenticationGuard } from './auth/guards/authentication.guard';
 import { CreatePostProvider } from './post/services/create-post.provider';
 import { DataResponseInterceptor } from './common/interceptors/data-response/data-response.interceptor';
 import { UploadsModule } from './uploads/uploads.module';
+import { MailModule } from './mail/mail.module';
 
 const ENV = process.env.NODE_ENV;
 @Module({
@@ -55,7 +56,8 @@ const ENV = process.env.NODE_ENV;
     TagsModule,
     MetaOptionsModule,
     PaginationModule,
-    UploadsModule],
+    UploadsModule,
+    MailModule],
   controllers: [AppController],
   providers: [AppService,
     {

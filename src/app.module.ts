@@ -22,6 +22,7 @@ import { AccessTokenGuard } from './auth/guards/access-token.guard';
 import { AuthenticationGuard } from './auth/guards/authentication.guard';
 import { CreatePostProvider } from './post/services/create-post.provider';
 import { DataResponseInterceptor } from './common/interceptors/data-response/data-response.interceptor';
+import { UploadsModule } from './uploads/uploads.module';
 
 const ENV = process.env.NODE_ENV;
 @Module({
@@ -53,7 +54,8 @@ const ENV = process.env.NODE_ENV;
     JwtModule.registerAsync(jwtConfig.asProvider()),
     TagsModule,
     MetaOptionsModule,
-    PaginationModule],
+    PaginationModule,
+    UploadsModule],
   controllers: [AppController],
   providers: [AppService,
     {
